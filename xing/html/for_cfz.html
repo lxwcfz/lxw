@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<title>Dear_doggie</title>
+	<script src="../js/jquery-3.1.0.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="../js/vue.min.js"></script>
+	<script type="text/javascript" src="../js/for_cfz.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/for_cfz.css">
+	<script type="text/javascript" src="../js/fontSize.js"></script>
+</head>
+<body>
+	<div id="app">
+	<div class="hide"></div>
+	<div class="ok">
+		<img class="bg" src="../img/bg.png">
+		<button class="btn btn1"></button>
+		<button class="btn btn2"></button>
+		<button class="btn btn3"></button>
+		<button class="btn btn4"></button>
+		<button class="btn btn5"></button>
+		<button class="cbtn c1">
+			<div class="cd">猪猪</div >
+			<img class="pp" src="../img/p.png">
+		</button>
+		<button class="cbtn c2">
+			<div class="cd byclick">狗狗</div >
+			<img class="dd" src="../img/d.png">
+		</button>
+		<button class="cbtn c3">
+			<div class="cd">宝宝</div >
+			<img class="bb" src="../img/b.png">
+		</button>
+		<button class="cbtn c4">
+			<div class="cd">坏蛋</div >
+			<img class="hh" src="../img/h.png">
+		</button>
+		<p v-for="item in plist" v-bind:class="item.class" v-text="item.text"></p>			
+		<img v-bind:class="item.class" v-bind:src="item.url" v-for="item in imglist">
+		<audio class="audio" autoplay="true" loop="true" src="../music/finally.mp3"></audio>
+		<div class="em"></div>
+		<div class="hideleft"></div>
+		<div class="hideright"></div>
+		
+		<div class="ask">
+			<img src="../img/pig.png">
+			<p></p>
+			<button class="yes">YES</button>
+			<button class="no">NO</button>
+		</div>
+		<button v-bind:class="item.class" v-for="item in resbtn"><img></button>
+	</div>
+	<div class="window">
+		<p class="title"></p>
+		<p class="desc"></p>
+		<select v-for="item in sec.select" v-bind:class="item.class">
+			<option v-for="wave in item.option" v-text="wave.t"></option>
+		</select>
+		<button v-bind:class="item.class" v-for="item in closebtn">确定</button>
+	</div>
+	<div class="coordinate">
+		<img class="realflag" src="../img/realflag.png">
+		<img class="role" src="../img/flag.png">
+	</div>
+	<div class="startwindow">
+		<p>小宝贝，准备好进入你最亲爱的哥哥为你设计的历险记了吗</p>
+		<button>好啦，么么哒</button>
+	</div>
+	<div class="player">
+		<button v-for="item in song" v-bind:class="item.class" v-text="item.title">终于等到你</button>
+		<img class="recup" src="../img/recdown.png">
+	</div>		
+</div>
+</body>
+</html>

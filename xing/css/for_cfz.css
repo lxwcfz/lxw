@@ -1,0 +1,576 @@
+body{
+	width: 3.75rem;
+	font-size: 0;
+	overflow: hidden;
+}
+.ok p{
+	font-size: .2rem;
+	width: 3.75rem;
+	height: .36rem;
+	text-align: center;
+	line-height: .36rem;
+	border-radius: .1rem;
+	position: absolute;
+}
+.hideleft{
+	width: .33rem;
+	height: 5.9rem;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 800;
+	background: #fff;
+	display: none;
+}
+.hideright{
+	width: .33rem;
+	height: 5.9rem;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 800;
+	background: #fff;
+	display: none;
+}
+.bg{
+	width: 3.75rem;
+	height: 6.67rem;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 200;
+}
+.flower{
+	width: .5rem;
+	height: .5rem;
+	position: absolute;
+	z-index: 1002;
+	border-radius: .25rem;
+	display: none;
+}
+.rose1,.rose2,.rose3{
+	transform: rotate(30deg);
+    left: 3.75rem;
+    top: 1.6rem;
+}
+.rose1{
+	top: 3.7rem;
+}
+.rose2{
+	top: 5.6rem;
+}
+.rose4,.rose5,.rose6{
+	transform: rotate(-40deg);
+    right: 3.75rem;
+    top: 1.6rem;
+}
+.rose4{
+	top: 3.7rem;
+}
+.rose5{
+	top: 5.58rem;
+}
+.bh1,.bh2,.bh3{
+	transform: rotate(126deg);
+    left: 3.75rem;
+    top: 2.1rem;
+}
+.bh1{
+	top: .1rem;
+}
+.bh2{
+	top: 4.15rem;
+	z-index: 1001;
+}
+.bh4,.bh5,.bh6{
+	transform: rotate(50deg);
+    right: 3.75rem;
+    top: 2.02rem;
+}
+.bh4{
+	top: .3rem;
+}
+.bh5{
+	top: 4.2rem;
+}
+.sx1,.sx2,.sx3{
+	transform: rotate(60deg);
+    left: 3.75rem;
+    top: 2.6rem;
+}
+.sx1{
+	top: .53rem;
+	z-index: 1003;
+}
+.sx2{
+	top: 4.6rem
+}
+.sx4,.sx5,.sx6{
+	transform: rotate(-26deg);
+    right: 3.75rem;
+    top: 2.6rem;
+}
+.sx4{
+	top: .7rem;
+	z-index: 1003;
+}
+.sx5{
+	top: 5.2rem;
+}
+.th1,.th2,.th3{
+	transform: rotate(40deg);
+    left: 3.75rem;
+    top: 3.2rem;
+}
+.th1{
+	top: 1.05rem;
+}
+.th2{
+	top: 5.15rem;
+}
+.th4,.th5,.th6{
+	transform: rotate(-40deg);
+    right: 3.75rem;
+    top: 3.15rem;
+}
+.th4{
+	top: 1.12rem;
+}
+.th5{
+	top: 4.7rem;
+}
+.btn{
+	z-index: 200;
+	position: absolute;
+	border: none;
+	outline: none;
+	display: none;
+}
+.btn1,.btn2,.btn3{
+	width: .6rem;
+	height: .6rem;
+	border-radius: .3rem;
+	background:none;
+}
+.btn1{
+	left: .22rem;
+	top: 1.35rem;
+	display: block;
+}
+.btn2{
+	left: 2.76rem;
+	top: 1rem;
+}
+.btn3{
+	left: 3.14rem;
+	top: 2.45rem;
+}
+.btn4{
+	width: .8rem;
+	height: .8rem;
+	border-radius: .4rem;
+	background: none;
+	left: 2.56rem;
+	top: 4.17rem;
+}
+.btn5{
+	width: 1.16rem;
+	height: 1.16rem;
+	border-radius: .58rem;
+	background: none;
+	left: 1rem;
+	top: 2.1rem;
+}
+.p1,.p5,.p9,.p13,.p17,.p21{
+	background: #FFC0CB;
+	color: black;
+	top: 2.4rem;
+	left: -3.75rem;
+}
+.p3,.p7,.p11,.p15,.p19,.p23{
+	background: #8A2BE2;
+	color: #fff;
+	top: 2.4rem;
+	left: 3.75rem; 
+}
+.p2,.p6,.p10,.p14,.p18,.p22{
+	background: #e8d098;
+	color: blue;
+	top: -.36rem;
+}
+.p4,.p8,.p12,.p16,.p20,.p24{
+	background: #e8e8ff;
+	color: black;
+	position: fixed;
+	bottom: -.36rem;
+}
+.zjj,.xgll,.flls,.snow{
+	width: 3.75rem;
+	height: 2.6rem;
+	position: absolute;
+	top: 2.8rem;
+	z-index: 1000;
+}
+.xgll,.flls{
+	left: -3.75rem;
+}
+.zjj,.snow{
+	left: 3.75rem;
+}
+.start,.n{
+	width: 1.6rem;
+	/*height: .3rem;*/
+	position: fixed;
+	z-index: 100;
+	left: 1.12rem;
+	top: 5.6rem;
+}
+.start{
+	z-index: 200;
+	position: absolute;
+    left: .36rem;
+    top: 3.8rem;
+    height: 1rem;
+    opacity: 0;
+    border-radius: 50%;
+}
+.pig,.dog{
+	width: .6rem;
+	height: 1rem;
+	position: absolute;
+	z-index: 5000;
+}
+.pig{
+	top: .02rem;
+	left: -.6rem;
+}
+.dog{
+	top: 0;
+	left: 4.35rem;
+}
+.bike,.bikeright{
+	width: 1.16rem;
+	height: .75rem;
+	z-index: 1001;
+}
+.bikeright{
+	position: absolute;
+    left: 3.75rem;
+    top: 4.4rem;
+}
+.bike{
+	position: absolute;
+	left: -1.16rem;
+	top: 4.4rem;
+}
+.fat{
+	width: 1rem;
+	height: 1rem;
+	position: absolute;
+    left: -3.75rem;
+    top: 3rem;
+    z-index: 25
+}
+.bare{
+	width: 1rem;
+	height: 1rem;
+	position: absolute;
+	top: 3rem;
+	left: -1rem;
+}
+.icecream{
+	width: 1rem;
+	height: 1rem;
+	position: absolute;
+	left: 1.35rem;
+	top: -1rem;
+}
+.heart{
+	height: 1.6rem;
+	display: none;
+	position: absolute;
+	left: .7rem;
+	top: .7rem;
+	z-index: 3;
+}
+.trumpet,.play{
+	width: .6rem;
+	/*height: .36rem;*/
+	position: absolute;
+	left: 3.15rem;
+	top: 0;
+	z-index: 9000;
+}
+.play{
+	display: none;
+}
+.player{
+	position: absolute;
+    z-index: 10000;
+/*    top: -1.32rem;*/
+    left: .6rem;
+    width: 1rem;
+    background: #fff;
+}
+.player button{
+	display: block;
+    width: 1rem;
+    height: .4rem;
+    border: none;
+    background: #CC9933;
+    color: #fff;
+    margin-bottom: .06rem;
+    outline: none;
+}
+.by{
+	border-radius: .2rem;
+}
+.recup{
+	position: absolute;
+	width: 1rem;
+	height: .24rem;
+	display: block;
+	z-index: 10000;
+}
+.cbtn{
+	width: .9rem;
+	height: .9rem;
+	border-radius: .45rem;
+	position: fixed;
+	bottom: -.45rem;
+	border:none;
+	outline: none;
+	z-index: 2000;
+	font-size: .2rem;
+	color: #fff;
+	display: none;
+}
+.cd{
+	margin-top: -.32rem;
+}
+.c1{
+	left: 0;
+	background: #6699ff;
+}
+.c2{
+	left: .94rem;
+	background: #ff66cc;
+}
+.c3{
+	left: 1.88rem;
+	background: #ff66cc;
+}
+.c4{
+	right: 0;
+	background: #6699ff;
+}
+.pp,.dd,.bb,.hh{
+	width: .4rem;
+    height: .4rem;
+    position: fixed;
+    bottom: 0rem;
+    margin-left: -.2rem;
+    border-radius: .05rem;
+    display: none;
+}
+.pp{
+	display: inline-block;
+}
+.hide{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: gray;
+	z-index: 9999;
+	opacity: 0.4;
+}
+.ask{
+	width: 2.9rem;
+	height: 3rem;
+	z-index: 10000;
+	position: absolute;
+	left: .38rem;
+	top: 2.3rem;
+	display: none;
+}
+.ask img{
+	width: 80%;
+	height: 60%;
+	margin-left: 10%;
+	margin-top: 2%;
+}
+.ask p{
+	width: 100%;
+	height: .4rem;
+	line-height: .4rem;
+	text-align: center;
+	background: #CC9933;
+	color: #fff;
+	font-size: .16rem;
+	margin-top: .2rem;
+}
+.ask .yes,.ask .no{
+	width: 50%;
+	height: .3rem;
+	text-align: center;
+	background: #CC9933;
+	color: #fff;
+	font-size: .14rem;
+	font-weight: bold;
+	margin-top: .8rem;
+	outline: none;
+	border: none;
+}
+.res,.ress1,.ress2,.ress3,.ress4,.ress5{
+	width: 2.4rem;
+	height: 2rem;
+	position: absolute;
+	left: .65rem;
+	top: 2.4rem;
+	z-index: 10000;
+	border: none;
+	background: #CC9933;
+	color: #fff;
+	font-size: .16rem;
+	font-weight: bold;
+	line-height: .2rem;
+	display: none;
+}
+.window{
+	width: 2.4rem;
+	height: 2rem;
+	position: absolute;
+	left: .65rem;
+	top: 2.4rem;
+	z-index: 9999;
+	border: none;
+	background: #CC9933;
+	color: #fff;
+	font-size: .16rem;
+	font-weight: bold;
+	line-height: 2rem;
+	display: none;
+}
+.startwindow{
+	width: 2.4rem;
+	height: 2rem;
+	position: absolute;
+	left: .65rem;
+	top: 2.4rem;
+	z-index: 9999;
+	border: none;
+	background: #CC9933;
+	color: #fff;
+	font-size: .16rem;
+	font-weight: bold;
+	line-height: 2rem;
+}
+.startwindow p{
+	font-size: .2rem;
+    height: .2rem;
+    line-height: .3rem;
+    width: 80%;
+    margin-left: 10%;
+}
+.startwindow button{
+	width: 1rem;
+    height: 0.3rem;
+    font-size: 0.15rem;
+    background: #fff;
+    color: #CC9933;
+    border-radius: 0.1rem;
+    position: absolute;
+    left: .7rem;
+    top: 1.4rem;
+    border: none;
+    font-weight: bold;
+}
+.window button{
+	width: 0.6rem;
+    height: 0.3rem;
+    font-size: 0.15rem;
+    background: #fff;
+    color: black;
+    border-radius: 0.1rem;
+    position: absolute;
+    left: 1.5rem;
+    top: 1.4rem;
+    border: none;
+}
+.window button img{
+	width: 100%;
+	height: 100%;
+}
+.window select{
+	width: 1.2rem;
+	height: .3rem;
+	position: absolute;
+	left: .24rem;
+	top: 1.4rem;
+}
+.window .title{
+	width: 100%;
+    text-align: center;
+    height: .3rem;
+    line-height: .3rem;
+    font-size: .18rem;
+}
+.window .desc{
+	width: 80%;
+    margin-left: 10%;
+    height: .2rem;
+    line-height: .2rem;
+    text-align: center;
+}
+.em{
+	width: 100%;
+	height: 1.6rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	background: #fff;
+}
+embed{
+	z-index: 1;
+}
+.flash{
+	position: absolute;
+    z-index: 9998;
+    left: 20%;
+    top: 1rem;
+    display: none;
+}
+.together{
+	width: 3rem;
+	left: .36rem;
+	position: absolute; 
+	display: none;
+	top: 2.2rem;
+}
+.yeah,.aiya,.thinkagain{
+	width: 3rem;
+	position: absolute;
+	left: .375rem;
+	top: 2rem;
+	z-index: 10000;
+	display: none;
+}
+.coordinate{
+	position: absolute;
+	z-index: 9998;
+	left: 0.4rem;
+    top: -2rem;
+}
+.realflag{
+	width: .5rem;
+	position: absolute;
+}
+.role{
+	width: .5rem;
+    position: absolute;
+    top: -.59rem;
+    left: -.36rem;
+}
