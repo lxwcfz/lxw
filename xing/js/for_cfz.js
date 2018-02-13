@@ -74,7 +74,6 @@ $(function(){
 				{"class":"heart","url":"../img/heart.gif"},
 				{"class":"trumpet","url":"../img/trumpet.png"},
 				{"class":"play","url":"../img/play.png"},
-				{"class":"snow","url":"../img/snow.png"},
 				{"class":"xgll","url":"../img/xgll.png"},
 				{"class":"zjj","url":"../img/zjj.png"},
 				{"class":"flls","url":"../img/flls.png"},
