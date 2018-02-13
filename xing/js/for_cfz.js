@@ -338,7 +338,7 @@ $(function(){
 		}
 	});
 	function trans(){
-		if(parseInt($(".coordinate .role").css("width")) == "240"){
+		if(parseInt($(".coordinate .role").is("animated"))){
 			$(".role").attr("src","../img/cool.png");
 		}else{
 			$(".role").attr("src","../img/flag.png");

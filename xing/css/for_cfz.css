@@ -2,6 +2,8 @@ body{
 	width: 3.75rem;
 	font-size: 0;
 	overflow: hidden;
+	height: 6.67rem;
+	overflow-x: hidden;
 }
 .ok p{
 	font-size: .2rem;
