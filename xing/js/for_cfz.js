@@ -338,7 +338,7 @@ $(function(){
 		}
 	});
 	function trans(){
-		if(parseFloat($(".coordinate .role").css("width")) > "160"){
+		if(parseInt($(".coordinate .role").css("width")) == "240"){
 			$(".role").attr("src","../img/cool.png");
 		}else{
 			$(".role").attr("src","../img/flag.png");

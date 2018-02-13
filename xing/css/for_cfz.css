@@ -337,7 +337,7 @@ body{
 	height: .9rem;
 	border-radius: .45rem;
 	position: absolute;
-	bottom: -.45rem;
+	top: 6.26rem;
 	border:none;
 	outline: none;
 	z-index: 2000;
