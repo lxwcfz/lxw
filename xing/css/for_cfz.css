@@ -370,7 +370,7 @@ body{
 	width: .4rem;
     height: .4rem;
     position: absolute;
-    bottom: 0rem;
+    top: .03rem;
     margin-left: -.2rem;
     border-radius: .05rem;
     display: none;
