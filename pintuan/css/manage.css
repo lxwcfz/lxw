@@ -1,0 +1,227 @@
+*{
+	font-size: 0;
+	font-family: Microsoft YaHei;
+}
+body{
+	overflow-x: hidden;
+}
+header{
+	width: 100%;
+	height: .46rem;
+	background: black;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+}
+header button{
+	width: .6rem;
+	height: .46rem;
+	border: none;
+	outline: none;
+	background: none;
+	position: absolute;
+}
+.btn_back img{
+	width: 60%;
+	height: 70%;
+	margin-left: -35%;
+}
+header p{
+	width: 100%;
+	text-align: center;
+	height: .46rem;
+	line-height: .46rem;
+	font-size: .18rem;
+	color: #fff;
+}
+.tip{
+	width: 100%;
+    text-align: center;
+    height: .35rem;
+    line-height: .35rem;
+    font-size: .16rem;
+    color: #8d8d8f;
+    background: #efeef4;
+    margin-top: .46rem;
+}
+.data_top span{
+	width: .24rem;
+    height: .24rem;
+    background: #feb331;
+    color: #fff;
+    font-size: .16rem;
+    border-radius: .05rem;
+    display: inline-block;
+    text-align: center;
+    line-height: .24rem;
+    margin-left: .1rem;
+    margin-top: .06rem;
+}
+.data_top .data_title{
+	width: 3.2rem;
+    font-size: .18rem;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: .06rem;
+    margin-top: .06rem;
+}
+.data_top .btn_down{
+	width: .35rem;
+	height: .3rem;
+	float: right;
+    margin-right: .1rem;
+    border: none;
+    outline: none;
+    position: relative;
+    background: none;
+}
+.trans{
+	transform: rotate(-90deg);
+}
+.notrans{
+	position: absolute;
+    left: 0;
+    top: 0;
+}
+.data_top .btn_down img{
+	width: 100%;
+	height: 100%;
+}
+.data_hide .year_create:after,.data_hide .month_create:after{
+	content: "-";
+}
+.data_hide .hour_create:after{
+	content: ":";
+}
+.data_hide{
+	display: none;
+}
+.date_create{
+    font-size: .14rem;
+    width: 1rem;
+    height: .3rem;
+    line-height: .3rem;
+    text-align: right;
+    color: #b8b8b8;
+    display: inline-block;
+}
+.date_hide span{
+	font-size: .14rem;
+    line-height: .3rem;
+    color: #b8b8b8;
+    display: inline-block;
+}
+.data_hide{
+	margin-top: .2rem;
+}
+.date_hide .hour_create{
+	margin-left: .06rem;
+}
+.p{
+	width: .8rem;
+    height: .4rem;
+    line-height: .4rem;
+    font-size: .16rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding-left: .1rem;
+    display: inline-block;
+}	
+.data_detail .link{
+	width: 2.1rem;
+    height: .4rem;
+    border: none;
+    font-size: .16rem;
+    margin-top: .06rem;
+    line-height: .4rem;
+    color: #8690a8;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.data_detail .btn_copy,.data_detail .btn_save{
+	background: #f2f2f2;
+    width: .7rem;
+    height: .36rem;
+    vertical-align: top;
+    border: none;
+    border-radius: .1rem;
+    font-size: .16rem;
+    margin-top: .08rem;
+    outline: none;
+}
+.event_datatitle{
+	width: 100%;
+    height: .4rem;
+    line-height: .4rem;
+    font-size: .18rem;
+    padding-left: .1rem;
+    display: inline-block;
+    border-top: .01rem solid #d2caca; 
+    border-bottom: .01rem solid #d2caca;
+}
+.list p{
+	font-size: .18rem;
+    height: .6rem;
+    line-height: .6rem;
+    display: inline-block;
+    border-top: .03rem solid #bd5b4e;
+    margin-left: .04rem;
+}
+.list{
+	width: .8rem;
+    height: .9rem;
+    border: .01rem solid #bdbaba;
+    border-top: none;
+    border-bottom: .02rem solid #bdbaba;
+    margin-top: .3rem;
+    margin-bottom: .1rem;
+    margin-left: .1rem;
+    display: inline-block;
+}
+.list1 p{
+	border-color: #bd5b4e;
+}
+.list2 p{
+	border-color: #86a747;
+}
+.list3 p{
+	border-color: #3f9ed7;
+}
+.list4 p{
+	border-color: #4c74bf;
+}
+.list span{
+	width: 100%;
+    text-align: center;
+    font-size: .24rem;
+    display: inline-block;
+}
+.list_func{
+	background: #fbfbfb;
+}
+.func{
+    width: .8rem;
+    height: .62rem;
+    display: inline-block;
+    background: #fbfbfb;
+    margin-top: .1rem;
+    margin-left: .12rem;
+}
+.func img{
+	width: .36rem;
+    height: .36rem;
+    margin-left: .24rem;
+}
+.func span{
+	font-size: .13rem;
+    display: inline-block;
+    width: 95%;
+    text-align: center;
+    margin-top: .08rem;
+    color: #b4b4b6;
+    margin-left: 5%;
+}

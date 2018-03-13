@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<title>拼团</title>
+	<script type="text/javascript" src="../js/jquery-3.1.0.min.js"></script>
+	<script type="text/javascript" src="../js/vue.min.js"></script>
+	<script type="text/javascript" src="../js/share.js"></script>
+	<script type="text/javascript" src="../js/fontSize.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/share.css">
+</head>
+<body>
+<div id="app">
+	<header>
+		<button class="btn_back">
+			<img src="../img/back.png">
+		</button>
+		<p class="top_title" v-text="top_title.title"></p>
+	</header>
+	<div class="basic">
+	<img class="topbg" src="../img/topbg.png">
+		<div class="basic_info">
+			<span v-bind:class="item.class" v-for="item in basic_info" v-text="item.num"></span>
+		</div>
+	</div>
+	<div class="container_basic">
+		<img v-bind:class="item.class" v-bind:src="item.url" v-for="item in list_img.img1">
+		<p class="basic_title" v-text="top_title.title"></p>
+		<span v-text="item.num" v-bind:class="item.class" v-for="item in basic_span"></span>
+	</div>
+	<img class="mark" src="../img/duihuaninfo.png">
+	<div class="duihuan">
+		<p v-for="item in duihuaninfo" v-text="item.text" v-bind:class="item.class"></p>
+	</div>
+	<img class="mark" src="../img/waredetail.png">
+	<div class="waredetail">
+		<p v-for="item in waredetail" v-text="item.text" v-bind:class="item.class"></p>
+		<img v-bind:class="item.class" v-bind:src="item.url" v-for="item in list_img.img2">
+	</div>
+	<img class="mark" src="../img/eventrule.png">
+	<div class="event_rule">
+		<div class="rule_border"><p v-for="item in event.event_time" v-text="item.text" v-bind:class="item.class"></p></div>
+		<span v-for="item in event.event_rule" v-text="item.text" v-bind:class="item.class"></span>
+	</div>
+	<footer>
+		<button class="btn_user">
+			<img src="../img/user.png">
+			<p>我的</p>
+		</button>
+		<button class="btn_phone" v-on:click="phone()">
+			<img src="../img/phone.png">
+			<p>商家电话</p>
+			<span v-text="duihuaninfo[1].text"></span>
+		</button>
+		<button class="btn_create">我要开团</button>
+	</footer>
+</div>
+</body>
+</html>

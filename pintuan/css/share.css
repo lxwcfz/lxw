@@ -1,0 +1,319 @@
+*{
+	font-size: 0;
+	font-family: Microsoft YaHei;
+}
+body{
+	overflow-x: hidden;
+	background: #b1e8ff;
+}
+header{
+	width: 100%;
+	height: .46rem;
+	background: black;
+	position: fixed;
+	z-index: 100;
+	left: 0;
+	top: 0;
+}
+header button{
+	width: .6rem;
+	height: .46rem;
+	border: none;
+	outline: none;
+	background: none;
+	position: absolute;
+}
+.btn_back img{
+	width: 60%;
+	height: 70%;
+	margin-left: -35%;
+}
+header p{
+	width: 2.34rem;
+    line-height: .46rem;
+    font-size: .18rem;
+    color: #fff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-left: .86rem;
+}
+.num_check:after{
+	content: "次查看";
+	color: black;
+}
+.num_cus:after{
+	content: "人报名";
+	color: black;
+}
+.num_share:after{
+	content: "次分享";
+	color: black;
+}
+.basic_info{
+	width: 100%;
+    min-height: .3rem;
+    background: rgba(255, 255, 255,.7);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.basic_info span{
+	display: inline-block;
+	min-height: .3rem;
+	line-height: .3rem;
+	margin-left: .06rem;
+	font-size: .16rem;
+	color: #c73729;
+}
+.basic{
+	margin-top: .46rem;
+	min-height: 1.6rem;
+	width: 100%;
+	position: relative;
+}
+.topbg{
+	width: 100%;
+	height: 100%;
+}
+.container_basic{
+	width: 3.65rem;
+	margin-left: .05rem;
+	background: #fff;
+	border-radius: .1rem;
+}
+.listimg{
+	width: 94%;
+	margin-left: 3%;
+	margin-top: .1rem;
+}
+.container_basic p{
+	width: 100%;
+    text-align: center;
+    font-size: .14rem;
+    color: #353333;
+    margin-top: .2rem;
+}
+.container_basic .oldprice{
+	font-size: .14rem;
+    color: #7b7b7b;
+    display: inline-block;
+    width: 48%;
+    margin-left: 2%;
+    margin-top: .1rem;
+    vertical-align: top;
+}
+.container_basic .ware_num{
+	font-size: .14rem;
+    color: #7b7b7b;
+    display: inline-block;
+    width: 48%;
+    margin-top: .1rem;
+    vertical-align: top;
+    text-align: right;
+}
+.container_basic .smem_num{
+	font-size: .18rem;
+    width: .7rem;
+    height: .36rem;
+    line-height: .36rem;
+    text-align: center;
+    display: inline-block;
+    background: #b1e8ff;
+    border-radius: .1rem;
+    margin-left: .08rem;
+    margin-top: .1rem;
+}
+.container_basic .lmem_num{
+	font-size: .2rem;
+    width: 2.4rem;
+    height: .5rem;
+    line-height: .56rem;
+    background: #b1e8ff;
+    display: block;
+    margin-left: .08rem;
+    border-radius: .1rem;
+    margin-top: -.1rem;
+    padding-left: .1rem;
+}
+.container_basic .price{
+	font-size: .26rem;
+    width: 1.08rem;
+    height: .5rem;
+    line-height: .56rem;
+    display: inline-block;
+    text-align: right;
+    background: #b1e8ff;
+    border-radius: .1rem;
+    padding-right: .1rem;
+    margin-left: 2.4rem;
+    margin-top: -1.2rem;
+    vertical-align: text-bottom;
+}
+.container_basic .preprice{
+	font-size: .18rem;
+    width: 3.4rem;
+    height: .6rem;
+    text-align: right;
+    display: inline-block;
+    margin-left: .08rem;
+    margin-top: -.1rem;
+    padding-right: .1rem;
+    background: #b1e8ff;
+    border-radius: .1rem;
+    line-height: .66rem;
+    margin-bottom: .16rem;
+}
+.container_basic .oldprice:before{
+	content: "原价：￥"
+}
+.container_basic .ware_num:before{
+	content: "总共"
+}
+.container_basic .ware_num:after{
+	content: "份"
+}
+.container_basic .smem_num:after{
+	content: "人团"
+}
+.container_basic .lmem_num:after{
+	content: "人即可享受特惠价"
+}
+.container_basic .lmem_num:before{
+	content: "凑齐"
+}
+.container_basic .price:after{
+	content: "元"
+}
+.container_basic .price:before{
+	content: "￥"
+}
+.container_basic .preprice:after{
+	content: "元"
+}
+.container_basic .preprice:before{
+	content: "预付款："
+}
+.mark{
+	width: 1.66rem;
+    height: .7rem;
+    margin-left: 1.05rem;
+}
+.duihuan .name:before{
+	content: "商家名称："
+}
+.duihuan .phone:before{
+	content: "服务电话："
+}
+.duihuan,.waredetail,.event_rule{
+	width: 3.59rem;
+	margin-left: .08rem;
+	background: #fff;
+	border-radius: .1rem;
+	padding-bottom: .1rem;
+	padding-top: .1rem;
+}
+.duihuan .name,.duihuan .phone{
+	font-size: .18rem;
+    color: #769baa;
+    width: 90%;
+    margin-left: .1rem;
+}
+.duihuan .phone{
+	margin-top: .1rem;
+}
+.waredetail p{
+	width: 94%;
+    margin-left: 3%;
+    font-size: .18rem;
+    color: #6e95a5;
+}
+.start_year:before{
+	content: "活动时间："
+}
+.start_month:before,.start_day:before,.end_month:before,.end_day:before{
+	content: "."
+}
+.end_year:before{
+	content: "-"
+}
+.event_rule span{
+	font-size: .16rem;
+    width: 94%;
+    display: inline-block;
+    margin-left: 3%;
+    color: #628c9e;
+}
+.event_rule{
+	margin-bottom: .7rem;
+}
+.event_rule p{
+	font-size: .16rem;
+    display: inline-block;
+    color: #628c9e;
+    margin-left: .02rem;
+}
+.event_rule .rule_border{
+	width: 94%;
+    display: inline-block;
+    margin-left: 3%;
+    height: .36rem;
+    border-bottom: .02rem dashed #628c9e;
+    margin-bottom: .12rem;
+}
+footer{
+	background: #fff;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+}
+.btn_user p,.btn_phone p{
+	font-size: .14rem;
+    color: #928d8d;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+.btn_user,.btn_phone{
+	width: .65rem;
+    height: .5rem;
+    margin-left: .1rem;
+    vertical-align: top;
+}
+.btn_user img,.btn_phone img{
+	width: 40%;
+    height: 50%;
+}
+.btn_user{
+	border-right: .01rem solid #d0c8c8;
+}
+.btn_phone{
+	position: relative;
+}
+.btn_phone span:before{
+	content: "服务电话："
+}
+.btn_phone span{
+	font-size: .16rem;
+    position: absolute;
+    left: -.1rem;
+    top: -.36rem;
+    width: 2.4rem;
+    display: inline-block;
+    text-align: left;
+    height: .36rem;
+    line-height: .36rem;
+    background: #fff;
+    border-radius: .04rem;
+    padding-left: .1rem;
+    color: #928d8d;
+    display: none;
+}
+.btn_create{
+	background: #fc0;
+    width: 2.08rem;
+    height: .5rem;
+    margin-left: .1rem;
+    font-size: .18rem;
+}
+	

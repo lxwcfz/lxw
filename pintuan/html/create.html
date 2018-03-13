@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<title>拼团</title>
+	<script type="text/javascript" src="../js/jquery-3.1.0.min.js"></script>
+	<script type="text/javascript" src="../js/vue.min.js"></script>
+	<script type="text/javascript" src="../js/create.js"></script>
+	<script type="text/javascript" src="../js/qiniu.min.js"></script>
+	<script type="text/javascript" src="../js/moxie.min.js"></script>
+	<script type="text/javascript" src="../js/plupload.dev.js"></script>
+	<script type="text/javascript" src="../js/plupload.full.min.js"></script>
+	<script type="text/javascript" src="../js/plupload.min.js"></script>
+	<script type="text/javascript" src="../js/fontSize.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/create.css">
+</head>
+<body>
+<div id="app">
+	<header>
+		<button class="btn_back">
+			<img src="../img/back.png">
+		</button>
+		<p class="top_title">创建活动-全民拼团</p>
+	</header>
+	<ul class="list_basic">
+		<li class="basic_set">
+			<p class="basic gray">基本设置</p>
+		</li>
+		<li class="event_title">
+			<p class="p">活动标题</p>
+			<input type="text" name="event_title">
+		</li>
+		<li v-bind:class="item.class" v-for="item in select.li">
+			<p class="p" v-text="item.title">活动开始</p>
+			<div class="module_date">
+				<select v-bind:name="item.yearname" id="select_year" class="select_year" v-on:click="year">
+					<option></option><option></option>
+				</select>
+				<p class="label">-</p>
+				<select v-bind:name="item.monthname" id="select_month" class="select_month" v-on:click="resetmonth()" 
+				v-on:blur="startmonthcheck(),endmonthcheck()">
+					<option v-bind:value="item.value" v-for="item in date.month" v-text="item.month"></option>
+				</select>
+				<p class="label">-</p>
+				<select v-bind:name="item.dayname" id="select_day" class="select_day" v-on:focus="selectmonth()"
+				v-on:blur="startdaycheck(),enddaycheck()">
+					<option v-bind:value="wave.day" v-for="wave in date.day" v-text="wave.day"></option>
+				</select>
+				
+			</div>
+		</li>
+		<li class="regis_req">
+			<p class="p">报名必填</p>
+			<span>姓名</span>
+			<span>电话</span>
+		</li>
+	</ul>
+	<!--拼团设置-->
+	<ul class="list_pintuan">
+		<li>
+			<p class="gray pintuan">拼团设置</p>
+		</li>
+		<li class="cost">
+			<p class="p">商品原价(元)</p>
+			<input type="text" name="oldprice" placeholder="请输入商品原价">
+		</li>
+		<li class="allprice">
+			<p class="p">全额支付</p>
+			<button class="btn_allprice" v-on:click="allprice()">
+				<div class="scroll"></div>
+			</button>
+		</li>
+		<li v-for="item in pintuan_set" v-bind:class="item.class">
+			<p class="p" v-text="item.title"></p>
+			<input type="text" v-bind:name="item.name" v-bind:placeholder="item.detail">
+		</li>
+	</ul>
+	<!--兑换信息-->
+	<p class="gray">兑换信息</p>
+	<p class="p servephone">服务电话</p>
+	<input class="input_servephone" type="text" name="servephone">
+	<!--活动描述-->
+	<ul class="list_event">
+		<li>
+			<p class="gray">活动描述</p>
+		</li>
+		<li v-for="item in event_disc" v-bind:class="item.class">
+			<p class="p" v-text="item.title"></p>
+			<input type="text" v-bind:name="item.name" v-bind:placeholder="item.detail">
+		</li>
+		<li class="insert_img">
+			<p class="eventimg p">活动图片</p>
+			<input type="text" readonly="readonly" placeholder="点击可预览选好的图片">
+			<span class="num_img">0</span>
+		</li>
+	</ul>
+	<!--上传图片-->
+	<div class="list_img">
+	<!-- <div class="module_activityImg" id="divActImg">
+                            <button v-on:click="addimg($event)" class="button_activityImg" id="btnActImg"><img class="img_activityImg" id="imgActImg"></img></button>
+                        </div> -->
+		<div class="rela">
+			<img src="../img/add_img.png">
+			<input id="file" type="file" name="insert_img" v-on:click="addimg(this)" multiple="multiple">
+		</div>
+		<img v-on:click="minusimg()" class="minus_img" src="../img/minus_img.png">
+	</div>
+	<!--活动规则-->
+	<p class="gray">活动规则</p>
+	<p class="p">活动规则</p>
+	<span v-for="item in event_rule" v-text="item.detail" v-bind:class="item.class"></span>
+	<!--保存-->
+	<div class="bottom">
+		<button class="btn_save" v-on:click="save()">保存</button>
+	</div>
+</div>
+</body>
+</html>

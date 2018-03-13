@@ -1,0 +1,213 @@
+*{
+	font-size: 0;
+	font-family: Microsoft YaHei;
+}
+body{
+	overflow-x: hidden;
+}
+header{
+	width: 100%;
+	height: .46rem;
+	background: black;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+}
+header button{
+	width: .6rem;
+	height: .46rem;
+	border: none;
+	outline: none;
+	background: none;
+	position: absolute;
+}
+.btn_back img{
+	width: 60%;
+	height: 70%;
+	margin-left: -35%;
+}
+header p{
+	width: 100%;
+	text-align: center;
+	height: .46rem;
+	line-height: .46rem;
+	font-size: .18rem;
+	color: #fff;
+}
+.gray{
+	width: 100%;
+    height: .4rem;
+    line-height: .4rem;
+    font-size: .18rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: #99999b;
+    background: #f0eff4;
+    padding-left: .1rem;
+}
+.p{
+	width: 1.1rem;
+    height: .4rem;
+    line-height: .4rem;
+    font-size: .18rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding-left: .1rem;
+    display: inline-block;
+}	
+.list_basic{
+    margin-top: .46rem;
+}
+.list_basic li,.list_pintuan li{
+	border-bottom: .01rem solid #607d8b87;
+}
+.list_basic input,.list_pintuan input,.input_servephone,.list_event input{
+	width: 2.46rem;
+    height: .4rem;
+    border: none;
+    font-size: .18rem;
+    vertical-align: top;
+    line-height: .4rem;
+}
+.module_date{
+	display: inline-block;
+    width: 2.46rem;
+    height: .4rem;
+    line-height: .4rem;
+    vertical-align: top;
+}
+.module_date .select_year{
+	width: .46rem;
+    height: .4rem;
+    border: none;
+    -webkit-appearance: none;
+    font-size: .18rem;
+}
+.module_date .select_month,.module_date .select_day{
+	width: .3rem;
+    height: .4rem;
+    border: none;
+    font-size: .18rem;
+    -webkit-appearance: none;
+    padding-left: .05rem;
+}
+.module_date .label{
+	width: .1rem;
+    height: .4rem;
+    font-size: .18rem;
+    line-height: .4rem;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+}
+.regis_req span{
+	display: inline-block;
+    width: .58rem;
+    height: .3rem;
+    background: #f0eff4;
+    vertical-align: top;
+    font-size: .18rem;
+    line-height: .26rem;
+    text-align: center;
+    margin-top: .05rem;
+    margin-right: .05rem;
+}
+.list_pintuan .btn_allprice{
+	background: #06bf02;
+    width: .6rem;
+    height: .32rem;
+    border: .01rem solid #c0c0c0;
+    vertical-align: top;
+    margin-top: .04rem;
+    border-radius: .24rem;
+    outline: none;
+}
+.list_pintuan .btn_allprice div{
+	width: .28rem;
+    height: .28rem;
+    border: .01rem solid #abbac2;
+    border-radius: .15rem;
+    background: #fff;
+    margin-left: .28rem;
+}
+.insert_img{
+	position: relative;
+}
+.list_img{
+	width: 2.6rem;
+    margin-left: 1.1rem;
+    margin-bottom: .1rem;
+    margin-top: -.1rem;
+}
+.rela{
+	position: relative;
+	width: .72rem;
+	height: .72rem;
+	display: inline-block;
+	margin-left: .1rem;
+	margin-top: .1rem;
+}
+.rela input{
+	width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+.minus_img{
+	margin-left: .1rem;
+	margin-top: .1rem;
+	display: none;
+}
+.newimg{
+	margin-left: .1rem;
+	margin-top: .1rem;
+}
+.list_img img{
+	width: .7rem;
+	height: .7rem;
+	vertical-align: top;
+	border: .01rem solid #dddddd;
+}
+.num_img{
+	font-size: .18rem;
+    position: absolute;
+    left: 3.4rem;
+    top: .086rem;
+    color: #99999b;
+}
+.num_img:after{
+	content: "/9";
+}
+.event_rule{
+	display: inline-block;
+    font-size: .18rem;
+    width: 2.46rem;
+    vertical-align: top;
+    margin-top: .08rem;
+    float: right;
+}
+.bottom{
+	width: 100%;
+    overflow: hidden;
+    height: .9rem;
+    background: #f0eff4;
+}
+.btn_save{
+	width: 3.5rem;
+    height: .36rem;
+    border: none;
+    background: #36a0da;
+    border-radius: .08rem;
+    margin-left: .125rem;
+    margin-top: .26rem;
+    font-size: .18rem;
+    color: #fff;
+    text-align: center;
+    line-height: .36rem;
+    outline: none;
+}
