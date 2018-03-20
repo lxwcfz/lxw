@@ -176,12 +176,14 @@ header p{
 .num_img{
 	font-size: .18rem;
     position: absolute;
-    left: 3.4rem;
-    top: .086rem;
+    left: 3.1rem;
+    top: .08rem;
     color: #99999b;
+    display: inline-block;
+    width: 1rem;
 }
-.num_img:after{
-	content: "/9";
+.num_img:before{
+	content: "数目:";
 }
 .event_rule{
 	display: inline-block;

@@ -13,6 +13,27 @@
 	<link rel="stylesheet" type="text/css" href="../css/manage_mine.css">
 </head>
 <body>
+<div id="app">
+	<header>
+		<button class="btn_back">
+			<img src="../img/back.png">
+		</button>
+		<p class="top_title">我参加过的活动</p>
+	</header>
+	<div class="bg">
+		<p class="title">我的活动</p>
+		<div class="user">
+			<img v-for="item in userinfo" v-bind:class="item.class" v-bind:src="item.url">
+			<p v-for="item in userinfo" v-text="item.name"></p>
+		</div>
+	</div>
+	<ul class="list_event">
+		<li v-for="item in list_event" v-bind:class="item.class">
+			<p><span class="span_pin">拼</span><span class="span_title" v-text="item.title"></span></p>
+			<button class="btn_check">查看</button>
+		</li>
+	</ul>
+</div>
 	
 </body>
 </html>

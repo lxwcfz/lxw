@@ -9,6 +9,7 @@
 	<script type="text/javascript" src="../js/vue.min.js"></script>
 	<script type="text/javascript" src="../js/manage.js"></script>
 	<script type="text/javascript" src="../js/fontSize.js"></script>
+	<script type="text/javascript" src="../js/clipboard.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="../css/reset.css">
 	<link rel="stylesheet" type="text/css" href="../css/manage.css">
 </head>
@@ -20,12 +21,15 @@
 		</button>
 		<p class="top_title">活动管理</p>
 	</header>	
+	<div class="hide_img" v-on:click="close">
+		<img v-bind:src="detail.url">
+	</div>
 	<p class="tip">点击活动标题查看分享链接及活动数据</p>
 	<!--活动数据-->
 	<div class="event_data">
 		<div class="data_top">
 			<span>团</span>
-			<p class="data_title">点击活动标题查看分享链接及活动数据点击活动标题查看分享链接及活动数据点击活动标题查看分享链接及活动数据</p>
+			<p class="data_title"  v-text="title.text"></p>
 			<button class="btn_down" v-on:click="down()">
 			<img class="trans" src="../img/btn_down.png">
 			</button>
@@ -33,19 +37,17 @@
 		<div class="data_hide">
 			<div class="date_hide">
 				<p class="date_create">创建时间：</p>
-				<span class="year_create">2018</span>
-				<span class="month_create">3</span>
-				<span class="day_create">12</span>
-				<span class="hour_create">10</span>
-				<span class="minute_create">36</span>
+				<span class="year_create" v-text="time.startyear"></span>
+				<span class="month_create" v-text="time.startmonth"></span>
+				<span class="day_create" v-text="time.startday"></span>
 			</div>
 			<div class="data_detail">
 				<p class="p event_link">活动链接:</p>
-				<p class="link">htttps://baidu.comhtttps://baidu.com</p>
-				<button class="btn_copy">复制</button>
+				<p class="link" v-text="detail.link"></p>
+				<button class="btn_copy" v-bind:data-clipboard-text="detail.link" v-on:click="copy">复制</button>
 				<p class="p event_poster">活动海报:</p>
-				<p class="link btn_watch">点击查看</p>
-				<button class="btn_save">保存</button>
+				<p class="link btn_watch" v-on:click="watch">点击查看</p>
+				<button class="btn_save" v-on:click="watch">查看</button>
 				<p class="event_datatitle">活动数据</p>
 				<div class="list_data">
 					<div v-bind:class="item.class" v-for="item in list_data">

@@ -1,0 +1,130 @@
+*{
+	font-size: 0;
+	font-family: Microsoft YaHei;
+}
+body{
+	overflow-x: hidden;
+	background: #eeeef3;
+}
+header{
+	width: 100%;
+	height: .46rem;
+	background: black;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+}
+header button{
+	width: .6rem;
+	height: .46rem;
+	border: none;
+	outline: none;
+	background: none;
+	position: absolute;
+}
+.btn_back img{
+	width: 60%;
+	height: 70%;
+	margin-left: -35%;
+}
+header p{
+	width: 100%;
+	text-align: center;
+	height: .46rem;
+	line-height: .46rem;
+	font-size: .18rem;
+	color: #fff;
+}
+.top img{
+	width: .6rem;
+	height: .54rem;
+	margin-left: 1.56rem;
+	margin-top: .2rem;
+}
+.top{
+	margin-top: .46rem;
+	background: #fff;
+}
+.top p{
+	width: 100%;
+    text-align: center;
+    font-size: .2rem;
+    color: #636363;
+    margin-top: .1rem;
+}
+.detail{
+	background: #fff;
+	margin-top: .2rem;
+	padding: .16rem;
+}
+.detail_left{
+	width: 1rem;
+	display: inline-block;
+}
+.detail_left p{
+	height: .4rem;
+    width: 100%;
+    font-size: .16rem;
+    color: #a6a6a6;
+    line-height: .4rem;
+}
+.detail_left .text_price{
+	height: .4rem;
+    width: 100%;
+    font-size: .2rem;
+    color: #5f5b5b;
+    line-height: .4rem;
+}
+.detail_right .pay_price:before{
+	content: "￥"
+}
+.detail_right{
+	width: 2.4rem;
+	display: inline-block;
+	vertical-align: top;
+}
+.pay_price{
+	font-size: .18rem;
+    width: 100%;
+    text-align: right;
+    height: .4rem;
+    line-height: .4rem;
+    display: inline-block;
+    color: #ff8240;
+}
+.pay_shop,.pay_event{
+    color: #6f6d6d;
+    font-size: .16rem;
+}
+.detail_right p{
+    width: 100%;
+    text-align: right;
+    height: .4rem;
+    line-height: .4rem;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.btn_ensure{
+	width: 3.4rem;
+    margin-left: .17rem;
+    margin-top: .2rem;
+    display: inline-block;
+    background: #36a0db;
+    border-radius: .1rem;
+    font-size: .2rem;
+    height: .5rem;
+    color: #fff;
+}
+.btn_cancel{
+    width: 1.2rem;
+    margin-top: .1rem;
+    display: inline-block;
+    border-radius: .1rem;
+    font-size: .18rem;
+    height: .4rem;
+    color: #8a97b4;
+    margin-left: 2.64rem;
+}

@@ -59,7 +59,12 @@ $(function(){
 				}else{
 					$(".btn_phone span").hide();
 				}
-				
+			},
+			create: function(){
+				$(".hide,.shadow").show();
+			},
+			submit: function(){
+				$(".hide,.shadow").hide();
 			}
 		}
 	})

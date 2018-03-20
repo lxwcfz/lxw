@@ -55,8 +55,16 @@
 			<p>商家电话</p>
 			<span v-text="duihuaninfo[1].text"></span>
 		</button>
-		<button class="btn_create">我要开团</button>
+		<button class="btn_create" v-on:click="create()">我要开团</button>
 	</footer>
+	<div class="shadow" v-on:click="submit()"></div>
+	<div class="hide">
+		<p class="username">姓名</p>
+		<input type="text" name="regis_name">
+		<p class="userphone">联系电话</p>
+		<input onkeyup="value=value.replace(/[^0-9-]+/,'')" type="text" name="regis_phone">
+		<button class="btn_submit" v-on:click="submit()">确定</button>
+	</div>
 </div>
 </body>
 </html>

@@ -88,8 +88,8 @@ header p{
 	margin-top: .1rem;
 }
 .container_basic p{
-	width: 100%;
-    text-align: center;
+	width: 96%;
+    margin-left: 2%;
     font-size: .14rem;
     color: #353333;
     margin-top: .2rem;
@@ -118,7 +118,7 @@ header p{
     height: .36rem;
     line-height: .36rem;
     text-align: center;
-    display: inline-block;
+    display: block;
     background: #b1e8ff;
     border-radius: .1rem;
     margin-left: .08rem;
@@ -315,5 +315,50 @@ footer{
     height: .5rem;
     margin-left: .1rem;
     font-size: .18rem;
+}
+.shadow{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: #5c5b60;
+    opacity: .6;
+    display: none;
+}
+.hide{
+    width: 3.5rem;
+    background: #fff;
+    height: 2.6rem;
+    border-radius: .1rem;
+    position: fixed;
+    left: .125rem;
+    z-index: 2;
+    top: 2rem;
+    display: none;
+}
+.hide p{
+    width: 100%;
+    font-size: .2rem;
+    text-indent: .2rem;
+    margin-top: .2rem;
+}
+.hide input{
+    width: 3rem;
+    height: .3rem;
+    border: .01rem solid #eeeef3;
+    border-radius: .05rem;
+    margin-left: .2rem;
+    margin-top: .1rem;
+    font-size: .16rem;
+}
+.hide button{
+    width: 1.6rem;
+    height: .3rem;
+    font-size: .2rem;
+    background: #62a3cc;
+    border-radius: .06rem;
+    margin-left: .96rem;
+    margin-top: .3rem;
 }
 	

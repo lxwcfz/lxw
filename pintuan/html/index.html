@@ -15,14 +15,14 @@
 <body>
 	<div id="app">
 		<header id="top" class="top">
-			<img src="../img/topbg.png">
+			<img v-bind:src="img">
 		</header>
 		<div class="list_btn">
-			<button class="btn_create">
+			<button class="btn_create" v-on:click="create">
 				<img src="../img/create.png">
 				<p class="p_create">活动创建</p>
 			</button>
-			<button class="btn_manage">
+			<button class="btn_manage" v-on:click="manage">
 				<img src="../img/manage.png">
 				<p class="p_manage">活动管理</p>
 			</button>	

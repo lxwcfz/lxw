@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<title>拼团</title>
+	<script type="text/javascript" src="../js/jquery-3.1.0.min.js"></script>
+	<script type="text/javascript" src="../js/vue.min.js"></script>
+	<script type="text/javascript" src="../js/order_pay.js"></script>
+	<script type="text/javascript" src="../js/fontSize.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/order_pay.css">
+</head>
+<body>
+<div id="app">
+	<header>
+	<button class="btn_back">
+		<img src="../img/back.png">
+	</button>
+	<p class="top_title">确认支付</p>
+	</header>
+	<div class="top">
+		<img src="../img/pay.png">
+		<p>确认支付</p>
+	</div>
+	<div class="detail">
+		<div class="detail_left">
+			<p class="text_price">支付价格</p>
+			<p>支付商家</p>
+			<p>活动名称</p>
+		</div>	
+		<div class="detail_right">
+			<p v-for="item in payinfo" v-bind:class="item.class" v-text="item.text"></p>
+		</div>	
+	</div>
+	<button class="btn_ensure">微信支付</button>
+	<button class="btn_cancel">取消支付</button>
+</div>
+</body>
+</html>

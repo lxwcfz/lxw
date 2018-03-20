@@ -2,6 +2,10 @@ $(function(){
 	var vm = new Vue({
 		el:"#app",
 		data:{
+			_haveInitQiniu:false,
+			img_list:[
+
+			],
 			select:{
 				"li":[
 					{
@@ -72,8 +76,8 @@ $(function(){
 			pintuan_set:[
 				{"title":"预付款",    "name":"preprice",    "detail":"建议售价的10%以上",	   "class":"preprice"},
 				{"title":"优惠价格",    "name":"price",    "detail":"输入团员优惠价格",	   "class":"price"},
-				{"title":"所需人数",    "name":"num1",    "detail":"请输入达到优惠所需人数",	"class":"num num_1"},
-				{"title":"最大人数",    "name":"num2",    "detail":"最大人数",	 "class":"num num_2"}
+				{"title":"所需人数",    "name":"num_people",    "detail":"请输入达到优惠所需人数",	"class":"num num_1"},
+				{"title":"最大人数",    "name":"num_max",    "detail":"最大人数",	 "class":"num num_2"}
 			],
 			event_disc:[
 				{"title":"商品数量",    "name":"ware_num",    "detail":"请合理设置勿超卖",	"class":"ware_num"},
@@ -85,6 +89,20 @@ $(function(){
 			]
 		},
 		methods:{
+			start: function(){
+				var $this = this;
+				$.ajax({
+					url:"",
+					type:"",
+					data:{
+
+					},
+					dataType:"json",
+					success: function(){
+
+					}
+				})
+			},
 			year: function(){
 				var next = myDate.getFullYear()+1;
 				if(!($(".event_start .select_year option").eq(1).text(next) && $(".event_end .select_year option").eq(1).text(next))){
@@ -139,13 +157,11 @@ $(function(){
 				}
 			},
 			save: function(){
+				startyear = year;
+				startmonth = month;
+				startday = day;
 				console.log($(".input_servephone").val().length)
-				if($(".preprice input").val() > $(".price input").val()){
-					alert("预付款不能大于设置价格")
-				};
-				if($(".cost input").val() < $(".preprice input").val()){
-					alert("预付款不能大于原价");
-				};
+				
 				if($("input").val() == ""){
 					alert("请将信息填写完整");
 				}else {
@@ -155,104 +171,118 @@ $(function(){
 					if($(".input_servephone").val().length !== "11"){
 						alert("请填写正确电话号码");
 					};
+					if($(".preprice input").val() > $(".price input").val()){
+						alert("预付款不能大于设置价格")
+					};
+					if($(".cost input").val() < $(".preprice input").val()){
+						alert("预付款不能大于原价");
+					};
 				}
 			},
-			addimg: function(event){
-                // var pic = $(event.currentTarget).find("img").attr("id").toString();
-                // var container = $(event.currentTarget).parent().attr("id").toString();
-                // var button = $(event.currentTarget).attr("id").toString();
-                // var myUptoken = "";
-                // var myKey = "";
-                // var Qiniu = new QiniuJsSDK();
-                // var $this = this;
-                // var option = {
-                //     runtimes: 'html5,flash,html4', // 上传模式，依次退化
-                //     browse_button: button, // 上传选择的
-                //     uptoken_func: function (file) {
-                //         $.ajax({
-                //             url: $this.getTokenUrl,
-                //             type: "POST",
-                //             async: false,
-                //             dataType: "json",
-                //             data: {
-                //                 path: "comm",
-                //             },
-                //             success: function (data) {
-                //                 if (data.error == 0) {
-                //                     myUptoken = data.uptoken;
-                //                     myKey = data.key;
-                //                 } else {
-                //                     alert(data.msg);
-                //                 }
-                //             },
-                //             error: function (a, b, c) {
-                //                 console.log(a + b + c);
-                //             }
-                //         });
-                //         return myUptoken;
-                //     },
-                //     get_new_uptoken: true,
-                //     unique_names: false, // 默认false，key为文件名。若开启该选项，JS-SDK会为每个文件自动生成key（文件名）
-                //     save_key: false, // 默认false。若在服务端生成uptoken的上传策略中指定了sava_key，则开启，SDK在前端将不对key进行任何处理
-                //     domain: 'http://qiniu.yoogus.com', // bucket域名，下载资源时用到，必需
-                //     container: container, // 上传区域DOM ID，默认是browser_button的父元素
-                //     max_file_size: '100mb', // 最大文件体积限制
-                //     flash_swf_url: $this.getMoxieUrl,
-                //     max_retries: 3, // 上传失败最大重试次数
-                //     dragdrop: true,
-                //     drop_element: container, // 拖曳上传区域元素的ID，拖曳文件或文件夹后可触发上传
-                //     chunk_size: '4mb', // 分块上传时，每块的体积
-                //     auto_start: true,
-                //     init: {
-                //         'FilesAdded': function (up, files) {
-                //             plupload.each(files, function (file) {
-                //                 // 文件添加进队列后，处理相关的事情
-                //             });
-                //         },
-                //         'BeforeUpload': function (up, file) {
-                //             // 每个文件上传前，处理相关的事情
-                //         },
-                //         'UploadProgress': function (up, file) {
-                //             // 每个文件上传时，处理相关的事情
-                //         },
-                //         'FileUploaded': function (up, file, info) {
-                //             // 每个文件上传成功后，处理相关的事情
-                //             // 其中info是文件上传成功后，服务端返回的json，形式如：
-                //             // {
-                //             //    "hash": "Fh8xVqod2MQ1mocfI4S4KpRL6D98",
-                //             //    "key": "gogopher.jpg"
-                //             //  }
-                //             // 查看简单反馈
-                //             // var domain = up.getOption('domain');
-                //             var res = JSON.parse(info);
-                //             //img.push(res.key)   ; //加入到数组中，给后台传数据
-                //             var domain = up.getOption('domain');
-                //             var picPrview = domain + "/" + res.key; //获取上传成功后的文件的Url
-                //             document.getElementById(button).setAttribute("disabled", "disabled");
-                //             document.getElementById(button).setAttribute("disabled", "disabled");
-                //             document.getElementById(pic).setAttribute("src", picPrview);
-                //             document.getElementById(pic).setAttribute("data-key", res.key);
-                //         },
-                //         'Error': function (up, err, errTip) {
-                //             //上传出错时，处理相关的事情
-                //         },
-                //         'UploadComplete': function () {
-                //             //队列文件处理完毕后，处理相关的事情
-                //         },
-                //         'Key': function (up, file) {
-                //             // 若想在前端对每个文件的key进行个性化处理，可以配置该函数
-                //             // 该配置必须要在unique_names: false，save_key: false时才生效
-                //             var key = myKey;
-                //             // do something with key here
-                //             return key
-                //         }
-                //     }
-                // };
-                // var uploader = Qiniu.uploader(option);
-                // uploader.start();
-			},
+			addimg: function(){
+				if(this._haveInitQiniu){
+					return 
+				}
+
+				this._haveInitQiniu = true;
+				let Qiniu = new QiniuJsSDK();
+				let token,selfKey;
+				let _self = this
+				var uploader = Qiniu.uploader({
+		            runtimes: 'html5,flash,html4',
+		            browse_button: 'btn_file',
+		            max_file_size: '100mb',
+		            flash_swf_url: 'http://cdn.staticfile.org/Plupload/2.1.1/Moxie.swf',
+		            chunk_size: '4mb',
+
+		            uptoken_func: function(){
+							$.ajax({
+                    			url: 'http://www.yoogus.com/qiniu/token',
+                    			dataType: 'json',
+                    			type:'POST',
+                    			data: {
+                        			path: "comm",
+                    			},
+                    			async:false,
+                    			success:function(res){
+                    				if(res.error==0){
+                    					token = res.uptoken
+                    					selfKey = res.key
+                    				}else{
+                    					// xxxx
+                    				}
+                    			},
+                    			error:function(e){
+                    				console.log(e)
+                    			}
+                			})
+                			return token
+		            }, //当然建议这种通过url的方式获取token
+		            domain: 'http://qiniu.yoogus.com',
+		            max_retries: 2,
+		            chunk_size: '4mb', // 分块上传时，每块的体积
+		            auto_start: true,
+		            multi_selection: true,
+		            get_new_uptoken:true,
+		            filters: {
+			            prevent_duplicates: true,
+			            mime_types: [{
+			                    title: "Image files",
+			                    extensions: "jpg,png,jpeg"
+			                } // 限定jpg,gif,png后缀上传
+			            ]
+			        },
+		            init: {
+		                'UploadProgress': function (up, file) {
+		                    // progress(file.percent)
+		                },
+		                'FileUploaded': function (up, file, info) {
+		                    // console.log(file);
+		                    var res = JSON.parse(info);
+		                    var domain = up.getOption('domain');
+		                    var mediaLink = domain + "/" + res.key;
+		                    var url = mediaLink;
+		                    _self.img_list.push(url)
+		                },
+		                'Error': function (up, err, errTip) {
+		                    console.log(up, err, errTip)
+		                },
+		                'Key': function (up, file) {
+		                    // 若想在前端对每个文件的key进行个性化处理，可以配置该函数
+		                    // 该配置必须要在unique_names: false，save_key: false时才生效
+		                    var key = selfKey;
+		                    // do something with key here
+		                    return key
+		                }
+		            },
+        		});
+			},			
+			// getToken: function() {
+			// 	let _self = this
+   //          	$.post({
+   //                  url: 'http://www.yoogus.com/qiniu/token',
+   //                  dataType: 'json',
+   //                  data: {
+   //                      path: "comm",
+   //                  }
+   //              }).done(function (res) {
+   //                  let token = res.uptoken,
+   //                      selfKey = res.key
+   //                      _self.addimg(token,selfKey)
+   //                  // fn({
+   //                  //     token,
+   //                  //     selfKey,
+   //                  //     ...config
+   //                  // })
+   //              })
+   //              .fail(function (e) {
+   //                  console.log(e)
+   //              })
+   //  		},
 			minusimg: function(){
 				$(".newimg:last").remove();
+				this.img_list.splice(-1,1);
+				console.log(this.img_list.length)
 			},
 			selectmonth: function(){
                 var para = year%4;
@@ -288,6 +318,10 @@ $(function(){
 	var year = myDate.getFullYear();
     var month = myDate.getMonth()+1;
     var day = myDate.getDate();
+    var startyear;
+    var startmonth;
+    var startday;
+    var img_url = vm.$data.img_list;
 	function choosedate(){
     	$(".select_year option").text(year);
         $(".select_month").val(month);
@@ -325,4 +359,6 @@ $(function(){
 	choosedate();
 	initkeyboard();
 	circleimg();
+	vm.addimg();
+	vm.start();
 })

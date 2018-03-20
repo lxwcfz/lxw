@@ -1,0 +1,192 @@
+/*创建活动页面create.html*/
+
+(点击保存按钮  提交的数据)
+表单："name"
+	event_title
+	startyear
+	startmonth
+	startday
+	endyear
+	endmonth
+	endday
+	oldprice
+	preprice	/*如果选了全额支付*/	
+	price
+	num_people
+	num_max
+	servephone
+	ware_num
+	event_disc
+
+图片："src"
+	img_url[ ]
+
+
+
+/*管理活动页面manage.html*/
+
+请求的数据
+time:{
+	"startyear":"2018",
+	"startmonth":"03",
+	"startday":"12",
+	"starthour":"15",
+	"startmin":"16"
+},
+title:{
+	"text":"点击活动标题查看分享链接及活动数据点击活动标题查看分享链接及活动数据点击活动标题查看分享链接及活动数据"
+},
+detail:{
+	"link":"https://www.baidu.com"
+},
+list_data:[
+	{"class":"list1 list","title":"浏览次数","num":"12"},
+	{"class":"list2 list","title":"分享次数","num":"12"},
+	{"class":"list3 list","title":"报名次数","num":"12"},
+	{"class":"list4 list","title":"成功次数","num":"12"}
+]
+	
+
+
+/*分享（底部——我要开团按钮）share.html页面*/
+
+请求的数据
+top_title:{
+	"title":"创建活动-全民拼团创建活动-全民拼团创建活动-全民拼团"
+},
+basic_info:[
+	{"class":"num_check",	"num":"9"},
+	{"class":"num_cus",	"num":"9"},
+	{"class":"num_share",	"num":"9"}
+],
+list_img:{
+	img1:[
+		{"class":"listimg img_basic",	"url":"../img/1.png"}
+	],
+	img2:[
+		{"class":"listimg img_detail",	"url":"../img/1.png"}
+	]
+},
+basic_span:[
+	{"class":"oldprice",	"num":"5"},
+	{"class":"ware_num",	"num":"5"},
+	{"class":"smem_num",	"num":"5"},
+	{"class":"lmem_num",	"num":"5"},
+	{"class":"price",	"num":"5"},
+	{"class":"preprice",	"num":"5"}
+],
+duihuaninfo:[
+	{"class":"name",	"text":"杭州电子科技大学"},
+	{"class":"phone",	"text":"12312312312"}
+],
+waredetail:[
+	{"class":"waredetail",	"text":"春节活动春节活动春节活动春节活动春节活动春节活动春节活动"}
+],
+event:{
+	event_time:[
+		{"class":"start_year",	"text":"2018"},
+		{"class":"start_month",	"text":"03"},
+		{"class":"start_day",	"text":"11"},
+		{"class":"end_year",	"text":"2018"},
+		{"class":"end_month",	"text":"4"},
+		{"class":"end_day",	"text":"01"}
+	],
+	event_rule:[
+		{"class":"rule1",	"text":"1.春节活动春节活动春节活动春节活动春节活动春节活动春节活动"},
+		{"class":"rule2",	"text":"2.春节活动春节活动春节活动春节活动春节活动春节活动春节活动"},
+		{"class":"rule3",	"text":"3.春节活动春节活动春节活动春节活动春节活动春节活动春节活动"},
+		{"class":"rule4",	"text":"4.春节活动春节活动春节活动春节活动春节活动春节活动春节活动"},
+		{"class":"rule5",	"text":"5.春节活动春节活动春节活动春节活动春节活动春节活动春节活动"},
+		{"class":"rule6",	"text":"6.春节活动春节活动春节活动春节活动春节活动春节活动春节活动"}
+	]
+}
+
+点击我要开团填写的报名信息     提 交 数 据
+表单 "name"
+	regis_name
+	regis_phone
+
+
+
+/*分享（底部——我要开团和找人组团按钮）share2.html页面*/
+
+请求的数据
+top_title:{
+	"title":"创建活动-全民拼团创建活动-全民拼团创建活动-全民拼团"
+},
+basic_info:[
+	{"class":"num_check",	"num":"9"},
+	{"class":"num_cus",	"num":"9"},
+	{"class":"num_share",	"num":"9"}
+],
+list_img:{
+	img1:[
+		{"class":"listimg img_basic",	"url":"../img/1.png"}
+	],
+	img2:[
+		{"class":"listimg img_detail",	"url":"../img/1.png"}
+	]
+},
+basic_span:[
+	{"class":"oldprice",	"num":"5"},
+	{"class":"ware_num",	"num":"5"},
+	{"class":"smem_num",	"num":"5"},
+	{"class":"lmem_num",	"num":"5"},
+	{"class":"price",	"num":"5"},
+	{"class":"preprice",	"num":"5"}
+],
+memberinfo:[
+	{"class":"rest_num","text":"2"},
+	{"class":"success","text":"拼团成功"}
+],
+userimg:[
+	{"class":"userimg user1","url":"../img/mem1.png"}
+],
+duihuaninfo:[
+	{"class":"name",	"text":"杭州电子科技大学"},
+	{"class":"phone",	"text":"12312312312"}
+],
+waredetail:[
+	{"class":"waredetail",	"text":"春节活动春节活动春节活动春节活动春节活动春节活动春节活动"}
+],
+event:{
+	event_time:[
+		{"class":"start_year",	"text":"2018"},
+		{"class":"start_month",	"text":"03"},
+		{"class":"start_day",	"text":"11"},
+		{"class":"end_year",	"text":"2018"},
+		{"class":"end_month",	"text":"4"},
+		{"class":"end_day",	"text":"01"}
+	],
+	event_rule:[
+		{"class":"rule1",	"text":"1.春节活动春节活动春节活动春节活动春节活动春节活动春节活动"},
+		{"class":"rule2",	"text":"2.春节活动春节活动春节活动春节活动春节活动春节活动春节活动"},
+		{"class":"rule3",	"text":"3.春节活动春节活动春节活动春节活动春节活动春节活动春节活动"},
+		{"class":"rule4",	"text":"4.春节活动春节活动春节活动春节活动春节活动春节活动春节活动"},
+		{"class":"rule5",	"text":"5.春节活动春节活动春节活动春节活动春节活动春节活动春节活动"},
+		{"class":"rule6",	"text":"6.春节活动春节活动春节活动春节活动春节活动春节活动春节活动"}
+	]
+}
+
+
+
+/*我的活动页面manage_mine.html*/
+
+请求的数据
+list_event:[
+	{"class":"event1",	"title":"活动标题活动标题活动标题活动标题活动标题活动标题活动标题",}
+],
+userinfo:[
+	{"class":"userimg",    "name":"咕酱",	  "url":"../img/mem1.png"}
+]
+
+
+
+/*支付页面order_pay.html*/
+
+
+payinfo:[
+	{"class":"pay_price",	"text":"12"},
+	{"class":"pay_shop",	"text":"优咕"},
+	{"class":"pay_event",	"text":"活动名称活动名称活动名称活动名称活动名称"}
+]

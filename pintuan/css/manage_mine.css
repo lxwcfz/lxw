@@ -1,0 +1,102 @@
+*{
+	font-size: 0;
+	font-family: Microsoft YaHei;
+}
+body{
+	overflow-x: hidden;
+}
+header{
+	width: 100%;
+	height: .46rem;
+	background: black;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+}
+header button{
+	width: .6rem;
+	height: .46rem;
+	border: none;
+	outline: none;
+	background: none;
+	position: absolute;
+}
+.btn_back img{
+	width: 60%;
+	height: 70%;
+	margin-left: -35%;
+}
+header p{
+	width: 100%;
+	text-align: center;
+	height: .46rem;
+	line-height: .46rem;
+	font-size: .18rem;
+	color: #fff;
+}
+.bg{
+	background: #eeeef3;
+	padding-bottom: .2rem;
+}
+.title{
+	margin-top: .46rem;
+    font-size: .18rem;
+    display: block;
+    color: #7c7c80;
+    height: .6rem;
+    line-height: .6rem;
+    margin-left: .1rem;
+}
+.userimg{
+	width: .46rem;
+    height: .46rem;
+    border-radius: .23rem;
+    margin-left: .1rem;
+    margin-top: .16rem;
+    margin-bottom: .16rem;
+}
+.user{
+	background: #fff;
+}
+.user p{
+	font-size: .2rem;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: .16rem;
+    height: .46rem;
+    line-height: .46rem;
+    margin-left: .06rem;
+}
+.list_event li p{
+	margin-left: .1rem;
+	margin-top: .2rem;
+	width: 2.5rem;
+	display: inline-block;
+}
+.list_event li p .span_title{
+	font-size: .16rem;
+    color: #353333;
+    margin-left: .06rem;
+}
+.list_event li p .span_pin{
+	font-size: .16rem;
+    display: inline-block;
+    width: .2rem;
+    height: .2rem;
+    background: #f5b130;
+    color: #fff;
+    line-height: .2rem;
+    text-align: center;
+}
+.list_event li .btn_check{
+    width: .62rem;
+    height: .32rem;
+    background: #36a0db;
+    color: #fff;
+    font-size: .16rem;
+    border-radius: .05rem;
+    vertical-align: top;
+    margin-top: .24rem;
+    margin-left: .36rem;
+}

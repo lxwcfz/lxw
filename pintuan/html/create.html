@@ -8,11 +8,14 @@
 	<script type="text/javascript" src="../js/jquery-3.1.0.min.js"></script>
 	<script type="text/javascript" src="../js/vue.min.js"></script>
 	<script type="text/javascript" src="../js/create.js"></script>
-	<script type="text/javascript" src="../js/qiniu.min.js"></script>
+<!-- 	<script type="text/javascript" src="../js/qiniu.min.js"></script>
 	<script type="text/javascript" src="../js/moxie.min.js"></script>
 	<script type="text/javascript" src="../js/plupload.dev.js"></script>
 	<script type="text/javascript" src="../js/plupload.full.min.js"></script>
-	<script type="text/javascript" src="../js/plupload.min.js"></script>
+	<script type="text/javascript" src="../js/plupload.min.js"></script> -->
+	<script type="text/javascript" src='https://cdn.staticfile.org/Plupload/2.1.1/moxie.js'></script>
+    <script type="text/javascript" src='https://cdn.staticfile.org/Plupload/2.1.1/plupload.dev.js'></script>
+    <script type="text/javascript" src='https://cdn.staticfile.org/qiniu-js-sdk/1.0.14-beta/qiniu.js'></script>
 	<script type="text/javascript" src="../js/fontSize.js"></script>
 	<link rel="stylesheet" type="text/css" href="../css/reset.css">
 	<link rel="stylesheet" type="text/css" href="../css/create.css">
@@ -99,12 +102,10 @@
 	</ul>
 	<!--上传图片-->
 	<div class="list_img">
-	<!-- <div class="module_activityImg" id="divActImg">
-                            <button v-on:click="addimg($event)" class="button_activityImg" id="btnActImg"><img class="img_activityImg" id="imgActImg"></img></button>
-                        </div> -->
+		<img class="newimg" v-bind:src="item" v-for="item in img_list">
 		<div class="rela">
-			<img src="../img/add_img.png">
-			<input id="file" type="file" name="insert_img" v-on:click="addimg(this)" multiple="multiple">
+			<img id='btn_file' src="../img/add_img.png" v-on:click="addimg()">
+			<!-- <input type="file" name="insert_img"  multiple="multiple"> -->
 		</div>
 		<img v-on:click="minusimg()" class="minus_img" src="../img/minus_img.png">
 	</div>
