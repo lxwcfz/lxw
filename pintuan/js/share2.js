@@ -1,7 +1,15 @@
 $(function(){
+	/*AJAX*/
+	// var x_csrf_token ='{{csrf_token()}}';
+	// $.ajaxSetup({
+ //    	headers: {
+ //        	'X-CSRF-TOKEN': x_csrf_token,
+ //    	}
+	// });
 	var vm = new Vue({
 		el:"#app",
 		data:{
+			link:"https://www.baidu.com",
 			top_title:{
 				"title":"创建活动-全民拼团创建活动-全民拼团创建活动-全民拼团"
 			},
@@ -61,13 +69,69 @@ $(function(){
 			}
 		},
 		methods:{
+			start: function(){
+				var _this = this;
+				$.ajax({
+					url:"",
+					type:"",
+					data:{},
+					dataType:"",
+					success: function(){
+						if(data.error == "0"){
+							_this.top_title = data.data.top_title;
+							_this.basic_info = data.data.basic_info;
+							_this.list_img = data.data.list_img;
+							_this.memberinfo = data.data.memberinfo;
+							_this.userimg = data.data.userimg;
+							_this.basic_span = data.data.basic_span;
+							_this.duihuaninfo = data.data.duihuaninfo;
+							_this.waredetail = data.data.waredetail;
+							_this.event = data.data.event;
+						}
+					},
+					error: function(){
+						console.log(error)
+					}
+				})
+			},
 			phone: function(){
 				if($(".btn_phone span").css("display") == "none"){
-					$(".btn_phone span").show();
+					$(".btn_phone span,.btn_copy").show();
 				}else{
-					$(".btn_phone span").hide();
+					$(".btn_phone span,.btn_copy").hide();
 				}
-				
+			},
+			create: function(){
+				$(".hide,.shadow").show();
+			},
+			close: function(){
+				$(".hide,.shadow").hide();
+			},
+			submit: function(){
+				if($(".hide input").eq(1).val().length == "11"){
+					var _this = this;
+					$.ajax({
+						url:"",
+						type:"post",
+						data:{
+							"regis_name":$(".hide input").eq(0).val(),
+							"regis_phone":$(".hide input").eq(1).val()
+						},
+						dataType:"json",
+						success: function(){
+							window.location.href = "/";
+						},
+						error: function(){
+							console.log(error);
+						}
+					})
+				}
+			},
+			copy: function(){
+				alert("已经复制到剪切板")
+			},
+			address: function(){
+				alert("已经将链接复制到剪切板")
 			}
 		}
 	});
@@ -78,4 +142,6 @@ $(function(){
 		$(".member .memend_year,.member .user1").css("margin-left",".08rem")
 	};
 	include();
+	var clipboard = new Clipboard('.btn_copy,.btn_find');
+	// vm.start();
 })

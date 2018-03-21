@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<title>生日心愿卡</title>
+	<script type="text/javascript" src="../js/jquery-3.1.0.min.js"></script>
+	<script type="text/javascript" src="../js/birthday.js"></script>
+	<script type="text/javascript" src="../js/vue.min.js"></script>
+	<script type="text/javascript" src="../js/fontSize.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/birthday.css">
+</head>
+<body>
+	<div id="app">
+		<img class="bg" src="../img/77.jpg">
+		<button class="btn_write"></button>
+		<div class="shadow" v-on:click="cardclose1()"></div>
+		<button class="btn_open" v-on:click="cardopen()"></button>
+		<div class="hide">
+			<div v-for="item in info">
+				<p v-bind:class="item.class" v-text="item.text"></p>
+				<input type="text" v-bind:name="item.name">
+			</div>
+			<div class="remark">
+			<span class="ticknew">√</span><span class="tickold">√</span>
+				<p class="title_remark">备注：</p>
+				<label v-on:click="newca" for="new">阳历</label>
+				<input v-on:click="newca" id="new" class="radio" type="radio" name="calendar" value="new" checked>
+				<label v-on:click="oldca" for="old">阴历</label>
+				<input v-on:click="oldca" id="old" class="radio" type="radio" name="calendar" value="old">
+			</div>
+			<p class="bir">请选择生日</p>
+			<div class="module_date">
+				<select name="year" id="select_year" class="select_year">
+					<option></option>
+				</select>
+				<label for="select_year" class="label_year">年</label>
+				<select name="month" id="select_month" class="select_month" v-on:click="resetmonth" 
+				v-on:blur="monthcheck()">
+					<option v-bind:value="item.value" v-for="item in date.month" v-text="item.month"></option>
+				</select>
+				<label for="select_month" class="label_month">月</label>
+				<select name="day" id="select_day" class="select_day" v-on:focus="selectmonth"
+				v-on:blur="daycheck()">
+					<option v-bind:value="wave.day" v-for="wave in date.day" v-text="wave.day"></option>
+				</select>
+				<label for="select_day" class="label_day">日</label>
+			</div>
+			<button class="btn_submit" v-on:click="cardclose()">提交</button>
+		</div>
+	</div>
+</body>
+</html>

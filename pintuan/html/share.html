@@ -9,6 +9,7 @@
 	<script type="text/javascript" src="../js/vue.min.js"></script>
 	<script type="text/javascript" src="../js/share.js"></script>
 	<script type="text/javascript" src="../js/fontSize.js"></script>
+	<script type="text/javascript" src="../js/clipboard.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="../css/reset.css">
 	<link rel="stylesheet" type="text/css" href="../css/share.css">
 </head>
@@ -55,9 +56,10 @@
 			<p>商家电话</p>
 			<span v-text="duihuaninfo[1].text"></span>
 		</button>
+		<button class="btn_copy" v-bind:data-clipboard-text="duihuaninfo[1].text" v-on:click="copy">复制</button>
 		<button class="btn_create" v-on:click="create()">我要开团</button>
 	</footer>
-	<div class="shadow" v-on:click="submit()"></div>
+	<div class="shadow" v-on:click="close()"></div>
 	<div class="hide">
 		<p class="username">姓名</p>
 		<input type="text" name="regis_name">

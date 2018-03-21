@@ -1,4 +1,11 @@
 $(function(){
+	/*AJAX*/
+	// var x_csrf_token ='{{csrf_token()}}';
+	// $.ajaxSetup({
+ //    	headers: {
+ //        	'X-CSRF-TOKEN': x_csrf_token,
+ //    	}
+	// });
 	var vm = new Vue({
 		el:"#app",
 		data:{
@@ -89,20 +96,23 @@ $(function(){
 			]
 		},
 		methods:{
-			start: function(){
-				var $this = this;
-				$.ajax({
-					url:"",
-					type:"",
-					data:{
-
-					},
-					dataType:"json",
-					success: function(){
-
-					}
-				})
-			},
+			// start: function(){
+			// 	var $this = this;
+			// 	$.ajax({
+			// 		url:"",
+			// 		type:"",
+			// 		data:{},
+			// 		dataType:"json",
+			// 		success: function(){
+			// 			if(data.error == "0"){
+			// 				$this.data. = data.data.;
+			// 			}
+			// 		},
+			// 		error: function(data){
+			// 			console.log(error)
+			// 		}
+			// 	})
+			// },
 			year: function(){
 				var next = myDate.getFullYear()+1;
 				if(!($(".event_start .select_year option").eq(1).text(next) && $(".event_end .select_year option").eq(1).text(next))){
@@ -157,27 +167,74 @@ $(function(){
 				}
 			},
 			save: function(){
-				startyear = year;
-				startmonth = month;
-				startday = day;
-				console.log($(".input_servephone").val().length)
+				var startyear = year;
+				var startmonth = month;
+				var startday = day;
+				var _this = this
+				var img_url = _this.img_list;
+				// console.log($(".input_servephone").val().length)
+				if($(".event_title input").val() == ""){
+					alert("请填写标题");
+				}else if($(".cost input").val() == "" || $(".cost input").val() < 0){
+						alert("请正确填写商品原价")
+					}else if($(".input_servephone").val().length != 11){
+							alert("请填写正确电话号码");
+						}else if($(".preprice").css("display") == "list-item"){
+							if($(".preprice input").val() == "" || $(".preprice input").val() < 0){
+								alert("请正确填写预付款")
+							}else if($(".preprice input").val() > $(".price input").val()){
+										alert("预付款不能大于设置价格")
+									}else if($(".cost input").val() < $(".preprice input").val()){
+											alert("预付款不能大于原价");
+										}
+						}else if($(".price input").val() == "" || $(".price input").val() < 0){
+									alert("请正确填写优惠后价格")
+								}else if($(".price input").val() > $(".cost input").val()){
+										alert("价格不能大于原价")
+									}else if($(".num_1 input").val() < 2){
+											alert("人数不能少于2");
+										}else if($(".ware_num input").val() == "" || $(".ware_num input").val() <= 0){
+												alert("请正确填写商品数量")
+											}else if($(".event_disc input").val() == ""){
+													alert("请填写商品介绍")
+												}else if(img_url.length < 1){
+														alert("请上传最少一张图片")
+													}else 
+				{
 				
-				if($("input").val() == ""){
-					alert("请将信息填写完整");
-				}else {
-					if($(".num input").val() < "2"){
-						alert("人数不能低于2")
-					};
-					if($(".input_servephone").val().length !== "11"){
-						alert("请填写正确电话号码");
-					};
-					if($(".preprice input").val() > $(".price input").val()){
-						alert("预付款不能大于设置价格")
-					};
-					if($(".cost input").val() < $(".preprice input").val()){
-						alert("预付款不能大于原价");
-					};
-				}
+					// $.ajax({
+					// 	url:"",
+					// 	type:"post",
+					// 	data:{
+					// 		'startyear':startyear,
+					// 		'startmonth':startmonth,
+					// 		'startday':startday,
+					// 		'img_url':img_url,
+					// 		'event_title':$(".event_title input").val(),
+					// 		'startyear':$(".event_start .select_year").val(),
+					// 		'startmonth':$(".event_estart .select_month").val(),
+					// 		'startday':$(".event_start .select_day").val(),
+					// 		'endyear':$(".event_end .select_year").val(),
+					// 		'endmonth':$(".event_end.select_month").val(),
+					// 		'endday':$(".event_end .select_day").val(),
+					// 		'oldprice':$(".cost input").val(),
+					// 		'preprice':$(".preprice input").val(),	/*如果选了全额支付*/	
+					// 		'price':$(".price input").val(),
+					// 		'num_people':$(".num_people input").val(),
+					// 		'num_max':$(".num_max input").val(),
+					// 		'servephone':$(".serve_phone input").val(),
+					// 		'ware_num':$(".ware_num input").val(),
+					// 		'event_disc':$(".event_disc input").val()
+					// 	},
+					// 	dataType:"json",
+					// 	success:function(){
+					// 		window.location.href = "/";
+					// 	},
+					// 	error:function(){
+
+					// 	}
+					// })
+				}	
 			},
 			addimg: function(){
 				if(this._haveInitQiniu){
@@ -318,10 +375,6 @@ $(function(){
 	var year = myDate.getFullYear();
     var month = myDate.getMonth()+1;
     var day = myDate.getDate();
-    var startyear;
-    var startmonth;
-    var startday;
-    var img_url = vm.$data.img_list;
 	function choosedate(){
     	$(".select_year option").text(year);
         $(".select_month").val(month);
@@ -360,5 +413,5 @@ $(function(){
 	initkeyboard();
 	circleimg();
 	vm.addimg();
-	vm.start();
+	// vm.start();
 })

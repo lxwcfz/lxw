@@ -1,4 +1,11 @@
 $(function(){
+	/*AJAX*/
+	// var x_csrf_token ='{{csrf_token()}}';
+	// $.ajaxSetup({
+ //    	headers: {
+ //        	'X-CSRF-TOKEN': x_csrf_token,
+ //    	}
+	// });
 	var vm = new Vue({
 		el:"#app",
 		data:{
@@ -28,6 +35,26 @@ $(function(){
 			]
 		},
 		methods:{
+			start: function(){
+				var _this = this;
+				$.ajax({
+					url:"",
+					type:"",
+					dataType:"json",
+					data:{},
+					success: function(data){
+						if(data.error == "0"){
+							_this.time = data.data.time;
+							_this.title = data.data.title;
+							_this.detail = data.data.detail;
+							_this.list_data = data.data.list_data;
+						}
+					},
+					error: function(){
+						console.log(error);
+					}
+				})
+			},
 			down: function(){
 				if($(".btn_down img").length == "1"){
 					var img = "<img class='notrans' src='../img/btn_down.png'>";
@@ -50,4 +77,5 @@ $(function(){
 		}
 	});
 	var clipboard = new Clipboard('.btn_copy');
+	// vm.start();
 })

@@ -361,4 +361,14 @@ footer{
     margin-left: .96rem;
     margin-top: .3rem;
 }
-	
+footer .btn_copy{
+    width: .5rem;
+    height: .3rem;
+    position: fixed;
+    background: #fff;
+    font-size: .14rem;
+    color: #989393;
+    left: 2.7rem;
+    bottom: .54rem;
+    display: none;
+}	

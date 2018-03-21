@@ -1,0 +1,316 @@
+body{
+    overflow-x: hidden;
+}
+*{
+    font-size: 0;
+}
+.bg{
+    width: 3.75rem;
+}
+.module_date {
+    height: .4rem;
+    width: 100%;
+    font-size: 0;
+    margin-top: .24rem;
+    margin-bottom: .2rem;
+}
+.module_date label{
+    height: .3rem;
+    width: .5rem;
+    font-size: .2rem;
+    text-align: center;
+    line-height: .3rem;
+    vertical-align: top;
+    display: inline-block;
+    color: #fff;
+}
+.module_date select{
+    width: .6rem;
+    height: .3rem;
+    vertical-align: top;
+    font-size: .16rem;
+    -webkit-appearance: none;
+    color: #987de6;
+    border-radius: .06rem;
+}
+.select_year{
+    padding-left: .1rem;
+}
+.select_month,.select_day{
+    padding-left: .2rem;
+}
+.hide div p{
+    font-size: .18rem;
+    color: #fff;
+    width: 1rem;
+    height: .3rem;
+    line-height: .3rem;
+    margin-left: .1rem;
+    display: inline-block;
+}
+.hide .btn_submit{
+    width: 2.4rem;
+    height: .36rem;
+    background: #fff;
+    border-radius: .06rem;
+    font-size: .18rem;
+    color: #987de6;
+    margin-left: .5rem;
+}
+.hide div input{
+    width: 2rem;
+    height: .3rem;
+    line-height: .3rem;
+    font-size: .18rem;
+    color: #987de6;
+    border: none;
+    border-radius: .05rem;
+}
+.remark .radio{
+    width: .26rem;
+    height: .26rem;
+    color: #987de6;
+    border: none;
+    vertical-align: top;
+    margin-left: .08rem;
+    margin-right: .2rem;
+    margin-top: .02rem;
+    opacity: 0;
+}
+.remark{
+    position: relative;
+    z-index: 2;
+}
+.remark label{
+    font-size: .18rem;
+    color: #fff;
+    width: .36rem;
+    height: .3rem;
+    line-height: .3rem;
+    display: inline-block;
+    vertical-align: top;
+}
+.remark .ticknew,.remark .tickold{
+    width: .26rem;
+    height: .26rem;
+    display: inline-block;
+    position: absolute;
+    color: #987de6;
+    background: #dedede;
+    text-align: center;
+    line-height: .26rem;
+    border-radius: .13rem;
+    margin-top: .02rem;
+}
+.ticknew{
+    left: 1.54rem;
+    font-size: .24rem;
+}
+.tickold{
+    left: 2.44rem;
+}
+.hide div{
+    margin-top: .2rem;
+}
+.module_date{
+    margin-left: .1rem;
+}
+.bir{
+    width: 2rem;
+    margin-left: .1rem;
+    margin-top: .3rem;
+    font-size: .18rem;
+    color: #fff;
+}
+.hide{
+    width: 3.4rem;
+    z-index: 2;
+    position: absolute;
+    left: .18rem;
+    top: 1.2rem;
+    background: #987de6;
+    height: 4rem;
+    display: none;
+    border-radius: .06rem;
+}
+.shadow{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    opacity: .5;
+    background: #fff;
+    display: none;
+}
+.btn_open{
+    width: 1.4rem;
+    height: .4rem;
+    position: absolute;
+    left: 1.24rem;
+    top: 3.48rem;
+    border-radius: .3rem;
+}
+/*生日页面*/
+.hide_img{
+    width:1.01rem;
+    height: 1.9rem;
+    display: inline-block;
+    box-shadow: 0.02rem 0.02rem 0.01rem #4d3c80;
+    border-radius: .1rem;
+    background: #f2f2f2;
+    position: absolute;
+    left: .2rem;
+    top: 4.58rem;
+    display: none;
+    z-index: 4;
+}
+.hide_img img{
+    width: 76%;
+    height: 1rem;
+    margin-left: 12%;
+    margin-top: .3rem;
+}
+.hide_img p{
+    font-size: .16rem;
+    width: 76%;
+    margin-left: 12%;
+    display: inline-block;
+    margin-top: .1rem;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.btn_openhide_img{
+    width: 1rem;
+    height: 1.9rem;
+    opacity: 0;
+    position: absolute;
+    left: .2rem;
+    top: 4.58rem;
+    z-index: 5;
+}
+.btn_more{
+    width: 1rem;
+    height: 1.9rem;
+    opacity: 0;
+    position: absolute;
+    left: 2.56rem;
+    top: 4.58rem;
+    z-index: 5;
+}
+.hide_more{
+    width: 0;
+    height: 0;
+    background: #fff;
+    position: absolute;
+    left: 1.875rem;
+    top: 3.335rem;
+    display: none;
+    z-index: 100;
+    transform: rotate(0deg);
+}
+.hide_more img{
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 20%;
+    border-radius: .16rem;
+
+}
+.btn_addnum{
+    width: 1.4rem;
+    height: .36rem;
+    opacity: 0;
+    position: absolute;
+    left: 1.16rem;
+    top: 2.965rem;
+    border-radius: .06rem;
+}
+.good_num{
+    width: 1.2rem;
+    height: .5rem;
+    background: #f2f2f2;
+    position: absolute;
+    left: 1.4rem;
+    top: 2.16rem;
+    font-size: .46rem;
+    text-align: center;
+    line-height: .7rem;
+    color: #4f3b80;
+}
+.birth_name{
+    position: absolute;
+    left: 1rem;
+    top: .98rem;
+    color: #4f3b80;
+    font-size: .18rem;
+    background: #f2f2f2;
+    text-align: center;
+    z-index: 2;
+}
+.birth_name:before{
+    content: "祝:"
+}
+.birth_num{
+    width: 1.6rem;
+    font-size: .18rem;
+    position: absolute;
+    top: .99rem;
+    color: #4f3b80;
+    background: #f2f2f2;
+    z-index: 2;
+}
+.birth_num:after{
+    content: "天后生日快乐"
+}
+.hidetext{
+    display: inline-block;
+    width: 100%;
+    height: .46rem;
+    position: absolute;
+    background: #f2f2f2;
+    left: 0;
+    top: .8rem;
+}
+.heart1,.heart2{
+    width: .3rem;
+    height: .3rem;
+    position: absolute;
+    left: 2.76rem;
+    top: 2.36rem;
+    transform: rotateY(0deg);
+}
+.rotate_img1{
+    width: 1rem;
+    height: 1.9rem;
+    position: absolute;
+    left: .2rem;
+    top: 4.58rem;
+    z-index: 3;
+    box-shadow: 0.05rem 0.05rem 0.01rem #bbb5b5;
+}
+.rotate_img2{
+    width: 1rem;
+    height: 1.9rem;
+    position: absolute;
+    left: 1.37rem;
+    top: 4.58rem;
+    z-index: 3;
+    box-shadow: 0.05rem 0.05rem 0.01rem #bbb5b5;
+}
+.more{
+    width: 1rem;
+    height: 1.9rem;
+    position: absolute;
+    left: 2.57rem;
+    top: 4.58rem;
+    z-index: 3;
+    box-shadow: 0.05rem 0.05rem 0.01rem #bbb5b5;
+}
+.hide_but{
+    width: 3.75rem;
+    background: #f2f2f2;
+    height: 2rem;
+    position: absolute;
+    left: 0;
+    top: 4.5rem;
+}
