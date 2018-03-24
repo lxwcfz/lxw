@@ -247,8 +247,8 @@ $(function(){
 
 				if(add !== 1){
 					$(".good_num").text(p);
-					$(".heart1").animate({top:"-=.5rem",opacity:"0"},500);
-					$(".heart2").delay(200).animate({top:"-=.5rem",opacity:"0"},500);
+					$(".heart2").animate({top:"-=.5rem",opacity:"0"},500);
+					$(".heart1").delay(200).animate({top:"-=.5rem",opacity:"0"},500);
 				}else{
 					alert("已经为他点过赞咯")
 				}

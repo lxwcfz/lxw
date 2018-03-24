@@ -6,6 +6,7 @@ body{
 }
 .bg{
     width: 3.75rem;
+    height: 5.95rem;
 }
 .module_date {
     height: .4rem;
@@ -148,7 +149,7 @@ body{
     height: .4rem;
     position: absolute;
     left: 1.24rem;
-    top: 3.48rem;
+    top: 3.08rem;
     border-radius: .3rem;
 }
 /*生日页面*/
@@ -161,7 +162,7 @@ body{
     background: #f2f2f2;
     position: absolute;
     left: .2rem;
-    top: 4.58rem;
+    top: 4.06rem;
     display: none;
     z-index: 4;
 }
@@ -186,7 +187,7 @@ body{
     opacity: 0;
     position: absolute;
     left: .2rem;
-    top: 4.58rem;
+    top: 4.06rem;
     z-index: 5;
 }
 .btn_more{
@@ -195,14 +196,14 @@ body{
     opacity: 0;
     position: absolute;
     left: 2.56rem;
-    top: 4.58rem;
+    top: 4.06rem;
     z-index: 5;
 }
 .hide_more{
     width: 0;
     height: 0;
     background: #fff;
-    position: absolute;
+    position: fixed;
     left: 1.875rem;
     top: 3.335rem;
     display: none;
@@ -222,7 +223,7 @@ body{
     opacity: 0;
     position: absolute;
     left: 1.16rem;
-    top: 2.965rem;
+    top: 2.64rem;
     border-radius: .06rem;
 }
 .good_num{
@@ -231,7 +232,7 @@ body{
     background: #f2f2f2;
     position: absolute;
     left: 1.4rem;
-    top: 2.16rem;
+    top: 1.9rem;
     font-size: .46rem;
     text-align: center;
     line-height: .7rem;
@@ -240,7 +241,7 @@ body{
 .birth_name{
     position: absolute;
     left: 1rem;
-    top: .98rem;
+    top: .88rem;
     color: #4f3b80;
     font-size: .18rem;
     background: #f2f2f2;
@@ -254,7 +255,7 @@ body{
     width: 1.6rem;
     font-size: .18rem;
     position: absolute;
-    top: .99rem;
+    top: .89rem;
     color: #4f3b80;
     background: #f2f2f2;
     z-index: 2;
@@ -269,22 +270,27 @@ body{
     position: absolute;
     background: #f2f2f2;
     left: 0;
-    top: .8rem;
+    top: .7rem;
 }
-.heart1,.heart2{
+.heart1,.heart2,.heart3{
     width: .3rem;
     height: .3rem;
     position: absolute;
     left: 2.76rem;
-    top: 2.36rem;
-    transform: rotateY(0deg);
+    top: 2.1rem;
+}
+.heart1{
+    z-index: 2;
+}
+.heart2{
+    z-index: 3;
 }
 .rotate_img1{
     width: 1rem;
     height: 1.9rem;
     position: absolute;
     left: .2rem;
-    top: 4.58rem;
+    top: 4.06rem;
     z-index: 3;
     box-shadow: 0.05rem 0.05rem 0.01rem #bbb5b5;
 }
@@ -293,7 +299,7 @@ body{
     height: 1.9rem;
     position: absolute;
     left: 1.37rem;
-    top: 4.58rem;
+    top: 4.06rem;
     z-index: 3;
     box-shadow: 0.05rem 0.05rem 0.01rem #bbb5b5;
 }
@@ -302,7 +308,7 @@ body{
     height: 1.9rem;
     position: absolute;
     left: 2.57rem;
-    top: 4.58rem;
+    top: 4.06rem;
     z-index: 3;
     box-shadow: 0.05rem 0.05rem 0.01rem #bbb5b5;
 }
@@ -312,5 +318,5 @@ body{
     height: 2rem;
     position: absolute;
     left: 0;
-    top: 4.5rem;
+    top: 4rem;
 }
