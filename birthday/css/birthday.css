@@ -125,7 +125,7 @@ body{
 .hide{
     width: 3.4rem;
     z-index: 2;
-    position: absolute;
+    position: fixed;
     left: .18rem;
     top: 1.2rem;
     background: #987de6;
