@@ -148,77 +148,81 @@
 	function black() {
 		let i = 1;
 		let obj = document.getElementsByClassName('btn_go')[0];
-		obj.style.left = '80%';
-		let timer = setInterval( function() {
-			obj.style.left = parseFloat(obj.style.left) - 0.2 + '%';
-			obj.style.transform = `rotate(${-16.2 * i}deg)`;
-			i = i + 1;
-			if(parseInt(obj.style.left) == 48) {
-				clearInterval(timer);
-				let a = 1;
-				obj.style.width = '120px';
-				let timer2 = setInterval( function() {
-					obj.style.width = parseInt(obj.style.width) + 1 + 'px';
-					a += 1;
-					if(a == 50) {
-						clearInterval(timer2);
-						let b = 1;
-						obj.style.width = '170px';
-						let timer3 = setInterval( function() {
-							obj.style.width = parseInt(obj.style.width) - 1 + 'px';
-							b += 1;
-							if(b == 50) {
-								clearInterval(timer3);
-								let timer4 = setInterval( function() {
-									obj.style.left = parseFloat(obj.style.left) + 0.2 + '%';
-									if(parseInt(obj.style.left) == 80) clearInterval(timer4);
-								},16)
-							}
-						},50)
-					}
-				},50)
-			}
-		},18)
+		if(obj.style.left == '80%'){
+			let timer = setInterval( function() {
+				obj.style.left = parseFloat(obj.style.left) - 0.2 + '%';
+				obj.style.transform = `rotate(${-16.2 * i}deg)`;
+				i = i + 1;
+				if(parseInt(obj.style.left) == 48) {
+					clearInterval(timer);
+					let a = 1;
+					obj.style.width = '120px';
+					let timer2 = setInterval( function() {
+						obj.style.width = parseInt(obj.style.width) + 1 + 'px';
+						a += 1;
+						if(a == 50) {
+							clearInterval(timer2);
+							let b = 1;
+							obj.style.width = '170px';
+							let timer3 = setInterval( function() {
+								obj.style.width = parseInt(obj.style.width) - 1 + 'px';
+								b += 1;
+								if(b == 50) {
+									clearInterval(timer3);
+									let timer4 = setInterval( function() {
+										obj.style.left = parseFloat(obj.style.left) + 0.2 + '%';
+										if(parseInt(obj.style.left) == 80) clearInterval(timer4);
+									},16)
+								}
+							},50)
+						}
+					},50)
+				}
+			},18)
+		};
 	};
 	function white() {
 		let i = 1;
 		let obj = document.getElementsByClassName('btn_back')[0];
-		obj.style.left = '40%';
-		let timer = setInterval( function() {
-			obj.style.left = parseFloat(obj.style.left) + 0.2 + '%';
-			obj.style.transform = `rotateY(${12 * i}deg)`;
-			i += 1;
-			if(parseInt(obj.style.left) == 70) {
-				clearInterval(timer);
-				let a = 1;
-				obj.style.width = '120px';
-				let timer2 = setInterval( function() {
-					obj.style.width = parseInt(obj.style.width) + 1 + 'px';
-					a += 1;
-					if(a == 50) {
-						clearInterval(timer2);
-						let b = 1;
-						obj.style.width = '170px';
-						let timer3 = setInterval( function() {
-							obj.style.width = parseInt(obj.style.width) - 1 + 'px';
-							b += 1;
-							if(b == 50) {
-								clearInterval(timer3);
-								let timer4 = setInterval( function() {
-									obj.style.left = parseFloat(obj.style.left) - 0.2 + '%';
-									if(parseInt(obj.style.left) == 40) clearInterval(timer4);
-								},16)
-							}
-						},50)
-					}
-				},50)
-			}
-		},18)
+		if(obj.style.left == '40%'){
+			let timer = setInterval( function() {
+				obj.style.left = parseFloat(obj.style.left) + 0.2 + '%';
+				obj.style.transform = `rotateY(${12 * i}deg)`;
+				i += 1;
+				if(parseInt(obj.style.left) == 70) {
+					clearInterval(timer);
+					let a = 1;
+					obj.style.width = '120px';
+					let timer2 = setInterval( function() {
+						obj.style.width = parseInt(obj.style.width) + 1 + 'px';
+						a += 1;
+						if(a == 50) {
+							clearInterval(timer2);
+							let b = 1;
+							obj.style.width = '170px';
+							let timer3 = setInterval( function() {
+								obj.style.width = parseInt(obj.style.width) - 1 + 'px';
+								b += 1;
+								if(b == 50) {
+									clearInterval(timer3);
+									let timer4 = setInterval( function() {
+										obj.style.left = parseFloat(obj.style.left) - 0.2 + '%';
+										if(parseInt(obj.style.left) == 40) clearInterval(timer4);
+									},16)
+								}
+							},50)
+						}
+					},50)
+				}
+			},18)
+		};
 	};
 	window.onload = function () {
 		function check() {
 			// console.log(document.documentElement.clientWidth);
+			document.getElementsByClassName('btn_go')[0].style.left = '80%';
 			let obj = document.getElementsByClassName('hide')[0];
+			document.getElementsByClassName('btn_back')[0].style.left = '40%';
 			obj.style.display = "none";
 			if(window.clientWidth < 400){
 				obj.style.display = "block";
@@ -368,7 +372,7 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: space-around;
-		background: skyblue;
+		background: #fff;
 		border-radius: 30px;
 	}
 	.showModel div p{
@@ -377,9 +381,11 @@
 	}
 	.showModel div button{
 		font-size: 20px;
-		padding: 10px 50px;
-		background: #fff;
+		padding: 2px 100px;
+		background: skyblue;
 		border-radius: 10px;
+		color: #fff;
+		box-shadow: 0 5px 8px 0 #d8cbcb;
 	}
 	.role{
 		position: absolute;
