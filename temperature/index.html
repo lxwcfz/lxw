@@ -15,8 +15,9 @@
 				let i = 1;
 				let timer = setInterval( function() {
 					key.style.left = `${0.9*i}%`;
-					key.style.top = `${1.1*i}%`;
-					key.style.marginLeft = `${-1.2*i}px`;
+					key.style.top = `${1*i}%`;
+					key.style.marginTop = `${0.72 * i}px`;
+					key.style.marginLeft = `${-1.4*i}px`;
 					key.style.transform = `rotate(${7.3*i}deg)`;
 					i += 1;
 					if( i == 51 ) {
@@ -29,8 +30,8 @@
 				let a = 1;
 				key.style.width = "120px";
 				let timer2 = setInterval( function() {
-					key.style.marginLeft = `${(2.5 * a)-60}px`;
-					key.style.marginTop = `${0.8 * a}px`;
+					key.style.marginLeft = `${(2.5 * a)-70}px`;
+					key.style.marginTop = `${0.8 * a + 36}px`;
 					key.style.width = parseFloat(key.style.width) - 2.4 + 'px';
 					a += 1;
 					if( a == 51 ) {
@@ -224,7 +225,7 @@
 			let obj = document.getElementsByClassName('hide')[0];
 			document.getElementsByClassName('btn_back')[0].style.left = '40%';
 			obj.style.display = "none";
-			if(window.clientWidth < 400){
+			if(document.documentElement.clientWidth < 400){
 				obj.style.display = "block";
 			}
 		};
@@ -363,7 +364,7 @@
 		position: absolute;
 		left: 0;
 		top: 0;
-		z-index: 2;
+		z-index: 10;
 	}
 	.showModel div{
 		width: 400px;
