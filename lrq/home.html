@@ -12,11 +12,28 @@
 		background: url('https://lxwcfz.github.io/lxw/lrq/bg.png');
 		background-size: 100% 100%;
 	}
+	.tem_con span:before{
+		content: '温度：';
+	}
+	.hum_com span:before{
+		content: '湿度：';
+	}
 </style>
 <body>
-	
+	<h1>温湿度测量</h1>
+	<div class="tem_con">
+		<span></span>
+		<img src="https://lxwcfz.github.io/lxw/lrq/tem.png">
+	</div>
+	<div class="hum_con">
+		<span></span>
+		<img src="https://lxwcfz.github.io/lxw/lrq/humi.png">
+	</div>
 </body>
 <script type="text/javascript">
 	var lrq = 'https://lxwcfz.github.io/lxw/lrq/';
+	function updateData() {
+		
+	}
 </script>
 </html>
