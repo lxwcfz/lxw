@@ -1,0 +1,341 @@
+	#app{
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+	.time_container{
+		margin-top: 100px;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+	}
+	.tem_con span:before{
+		content: '温度：';
+	}
+	.hum_con span:before{
+		content: '湿度：';
+	}
+	.tem_con img,.hum_con img{
+		width: 100px;
+		margin-top: 20px;
+	}
+	.btn_getTem{
+		font-size: 20px;
+		padding: 5px 20px;
+		letter-spacing: 2px;
+		border: none;
+		box-shadow: 0 5px 60px 5px #9a9393;
+		border-radius: 10px;
+	}
+	.tem_con,.hum_con{
+		width: 200px;
+		height: 300px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+	.switch{
+		width: 100px;
+		margin-left: -50px;
+		z-index: 2;
+		margin-right: 50px;
+	}
+	.switch p{
+		font-size: 16px;
+	}
+	.switch span{
+		font-size:20px;
+		color: blue;
+		width: 100%;
+		display: inline-block;
+		text-align: center;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	.switch input{
+		font-size: 14px;
+		padding-left: 10px;
+		border-radius: 10px;
+		box-sizing: border-box;
+		width: 100px;
+		height: 30px;
+		border: none;
+		box-shadow: 0 5px 50px 5px #a09494;
+		margin-bottom: 24px;
+	}
+	.data{
+		width: 120px;
+		padding: 5px;
+		padding-bottom: 15px;
+		height: 300px;
+		overflow-y: scroll;
+		overflow-x: hidden;
+		box-shadow: 0 5px 80px 5px #a09494;
+	}
+	.data div{
+		box-shadow: 3px 5px 20px 0 #989090;
+		margin-top: 10px;
+		width: 100%;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	.data div:last-child{
+		box-shadow: 3px 5px 20px 0 #69bbbf;
+	} 
+	.data div p{
+		font-size: 16px;
+		width: 100%;
+		height: 24px;
+		color: red;
+		white-space: nowrap;
+		text-align: center;
+		margin: 0;
+		padding: 0;
+	}
+	.data div p:last-child{
+		color: blue;
+	}
+	.data div p:first-child{
+		color: #000;
+	}
+	.sheet{
+		margin-left: 50px;
+		width: 500px;
+		height: 300px;
+		background: url('https://lxwcfz.github.io/lxw/lrq/axis.png');
+		background-size: 100% 100%;
+		position: relative;
+	}
+	.sheet .x,.sheet .y{
+		position: absolute;
+		font-size: 14px;
+	}
+	.x{
+		bottom: 10px; 
+		width: 60px;
+		height: 20px;
+		display: inline-block;
+	}
+	.y{
+		left: -10px;
+	}
+	.barCon{
+		width: 420px;
+		height: 240px;
+		margin-left: 45px;
+	}
+	.x_axis{
+		width: 420px;
+		height: 20px;
+		position: absolute;
+		top: 280px;
+		left: 56px;
+	}
+	.x_axis span{
+		display: inline-block;
+		width: 84px;
+		font-size: 14px;
+		text-align: center;
+		line-height: 20px;
+		height: 20px;
+	}
+	.barCon .bar{
+		width: 75px;
+		margin-top: 6px;
+		height: 250px;
+		display: inline-flex;
+		flex-direction: row;
+		align-items: flex-end;
+		justify-content: center;
+		margin-left: 6px;
+	}
+	.bar span,.bar p {
+		width: 25px;
+		display: inline-block;
+	}
+	.bar span{
+		margin-left: 12.5px;
+		background: #ce6969;
+	}
+	.bar p{
+		background: skyblue;
+	}
+
+	body{
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		padding: 0;
+		overflow-x: hidden;
+		background: url(bg.png) no-repeat;
+		background-size: 100% 100%;
+		background-position: right;
+	}
+	h1{
+		font-size: 32px;
+		color: skyblue;
+		margin-top: 36px;
+		width: 100%;
+		text-align: center;
+	}
+	*{
+		margin: 0;
+		padding: 0;
+		font-size: 0;
+	}
+	.container{
+		width: 34%;
+		/*height: 100%;*/
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		box-sizing: border-box;
+		justify-content: flex-start;
+		font-size: 0;
+	}
+	.container p:before{
+		content: "当前室温：";
+		font-size: 20px;
+		color: #000;
+	}
+	.container p:after{
+		content: "℃";
+		font-size: 20px;
+		color: #000;	
+		margin-left: 10px;
+	}
+	.container p{
+		font-size: 40px;
+		margin-top: 20px;
+		color: red;
+		width: 100%;
+	    text-align: center;
+	    white-space: nowrap;
+	}
+	img{
+		width: 100%;
+	}
+	.img_con{
+		position: relative;
+		margin-top: 36px;
+		width: 91px;
+		/*background: #fff;*/
+	}
+	.img_con span{
+		position: absolute;
+		background: linear-gradient(to top, skyblue, red);
+	    left: 0;
+	    bottom: 0;
+	    width: 90%;
+	    z-index: -1;
+	    margin-left: 5%;
+	    margin-bottom: 5px;
+	}
+	.right,.left{
+		width: 50%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		z-index: 5;
+		background: #f3f3f3;
+	}
+	.left{
+		left: 0;
+		transform: rotateY(180deg);
+	}
+	.right{
+		right: 0;
+	}
+	.btn_start{
+		width: 120px;
+		line-height: 36px;
+		font-size: 20px;
+		position: absolute;
+		left: 0;
+		/*margin-left: -60px;*/
+		top: 0;
+		background: none;
+		/*transform: rotateX(-60deg);*/
+		outline: none;
+		border: none;
+		z-index: 6;
+		cursor: pointer;
+	}
+	.btn_start img{
+		width: 100%;
+	}
+	.lock{
+		width: 120px;
+		position: absolute;
+		z-index: 6;
+		left: 50%;
+		margin-left: -60px;
+		top: 50%;
+		margin-top: -50px;
+	}
+	.showModel{
+		width: 100%;
+		display: none;
+		height: 100%;
+		background: rgba(0,0,0,.3);
+		/*display: flex;*/
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 10;
+	}
+	.showModel div{
+		width: 400px;
+		height: 300px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
+		background: #fff;
+		border-radius: 30px;
+	}
+	.showModel div p{
+		font-size: 24px;
+		color: #000;
+	}
+	.showModel div button{
+		font-size: 20px;
+		padding: 2px 100px;
+		background: skyblue;
+		border-radius: 10px;
+		color: #fff;
+		box-shadow: 0 5px 80px 5px #d8cbcb;
+	}
+	.role{
+		position: absolute;
+		z-index: 6;
+		left: 50%;
+		width: 120px;
+		/*display: none;*/
+	}
+	.boy{
+		top: 16%;
+	}
+	.girl{
+		margin-left: -120px;
+		top: 56%;
+	}
+	.btn_go,.btn_back{
+		width: 120px;
+		/*opacity: 0;*/
+		position: absolute;
+		top:40%;
+		z-index: 2; 
+	}
+	.btn_go{
+		left: 80%;
+	}
+	.btn_back{
+		left: 40%;
+	}

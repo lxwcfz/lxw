@@ -3,422 +3,50 @@
 <head>
 <meta charset='UTF-8'>
 </head>
-<script type="text/javascript">
-	var flag = 1;
-	window.onload = function () {
-		
-	}
-	function start () {
-		var key = document.getElementsByClassName('btn_start')[0];
-		switch (flag) {
-			case 1: 
-				let i = 1;
-				let timer = setInterval( function() {
-					key.style.left = `${0.9*i}%`;
-					key.style.top = `${1*i}%`;
-					key.style.marginTop = `${0.72 * i}px`;
-					key.style.marginLeft = `${-1.4*i}px`;
-					key.style.transform = `rotate(${7.3*i}deg)`;
-					i += 1;
-					if( i == 51 ) {
-						clearInterval(timer);
-						flag = 2;
-					};
-				},20);
-			break;
-			case 2: 
-				let a = 1;
-				key.style.width = "120px";
-				let timer2 = setInterval( function() {
-					key.style.marginLeft = `${(2.5 * a)-70}px`;
-					key.style.marginTop = `${0.8 * a + 36}px`;
-					key.style.width = parseFloat(key.style.width) - 2.4 + 'px';
-					a += 1;
-					if( a == 51 ) {
-						clearInterval(timer2);
-						flag = 3;
-					};
-				},20);
-				setTimeout( function() {
-					let lock = document.getElementsByClassName('lock')[0];
-					let b = 1;
-					let timer3 = setInterval( function() {
-						let x = b%2 == 0 ? 1 : -1;
-						lock.style.transform = `rotate(${x * 30}deg)`;
-						b += 1;
-						if(b == 6) {
-							lock.style.transform = `rotate(0deg)`;
-							lock.setAttribute('src',"unlock.png");
-							clearInterval(timer3);
-							setTimeout( function() {
-								let c = 1;
-								let timer4 = setInterval( function() {
-									lock.style.opacity = `${ 1 - 0.1 * c}`;
-									c += 0.5;
-									if(lock.style.opacity == 0){
-										clearInterval(timer4);
-										let boy = document.getElementsByClassName('role')[0];
-										let girl = document.getElementsByClassName('role')[1];
-										boy.style.display = "block";
-										girl.style.display = "block";
-										let d = 1;
-										let left = document.getElementsByClassName('left')[0];
-										let right = document.getElementsByClassName('right')[0];
-										let timer5 = setInterval( function() {
-											left.style.left = `${d * -6}px`;
-											right.style.right = `${d * -6}px`;
-											boy.style.marginLeft = `${d * -6}px`;
-											girl.style.marginLeft = `${d * 6 - 120}px`;
-											d += 1;
-											if(parseInt(left.style.left) <= -700) {
-												document.getElementsByClassName('doorCon')[0].style.display = "none";
-												clearInterval(timer5);
-												document.getElementsByClassName('showModel')[0].style.display = "flex";
-											};
-										},20);
-									}
-								},60)
-							},1000);
-						};
-					},300)
-				},1000)
-			break;
-		};
-	};
-	function second() {
-		let i = 1;
-		let obj = document.getElementsByClassName('showModel')[0].getElementsByTagName('div')[0];
-		let font = obj.getElementsByTagName('p')[0];
-		let btn = obj.getElementsByTagName('button')[0];
-		obj.style.width = '400px';
-		obj.style.height = '300px';
-		let timer = setInterval( function() {
-			obj.style.width = parseInt(obj.style.width) - i * 2 +'px'; 
-			obj.style.height = parseInt(obj.style.height) - i + 'px'; 
-			let para = 1-(i * 0.05);
-			if(para == 0){
-				font.style.display = "none";
-				btn.style.display = "none";
-			};
-			font.style.transform = `scale(${1-(i * 0.05)},${1-(i * 0.05)})`;
-			btn.style.transform = `scale(${1-(i * 0.05)},${1-(i * 0.05)})`;
-			i += 1;
-			if(parseInt(obj.style.width) <= 0 || parseInt(obj.style.height) <= 0) {
-				clearInterval(timer);
-				obj.parentNode.style.display = "none";
-				let boy = document.getElementsByClassName('btn_go')[0];
-				let girl = document.getElementsByClassName('btn_back')[0];
-				boy.style.opacity = girl.style.opacity = 0;
-				let a = 1;
-				let timer2 = setInterval( function() {
-					boy.style.opacity = 0.01 * a;
-					girl.style.opacity = 0.01 * a;
-					a += 1;
-					if(boy.style.opacity == 1) clearInterval(timer2);
-				},20)
-			}
-		},50)
-	};
-	function third() {
-		let tem = document.getElementsByClassName('temNum')[0].innerHTML;
-		let scroll = document.getElementsByClassName('img_con')[0].getElementsByTagName('span')[0];
-		if(document.getElementsByClassName('container')[0].getElementsByTagName('p')[0].innerHTML == 0){
-			scroll.style.height = "0px";
-			let a = 1;
-			let timer1 = setInterval( function() {
-				scroll.style.height = parseInt(scroll.style.height) + 5 + 'px';
-				a += 1;
-				if(parseInt(scroll.style.height) == 140) {
-					let i = 1;
-					clearInterval(timer1);
-					let addheight = (tem/10) * 40;
-					let timer = setInterval( function() {
-						document.getElementsByClassName('container')[0].getElementsByTagName('p')[0].innerHTML = i;
-						scroll.style.height = parseInt(scroll.style.height) + 4 + 'px';
-						i += 1;
-						if (i >= parseInt(tem)) {
-							clearInterval(timer);
-							document.getElementsByClassName('container')[0].getElementsByTagName('p')[0].innerHTML = tem;
-							scroll.style.height = 140 + addheight + 'px';
-						}
-					},100)
-				}
-			},100)
-		};
-	};
-	function black() {
-		let i = 1;
-		let obj = document.getElementsByClassName('btn_go')[0];
-		if(obj.style.left == '80%'){
-			let timer = setInterval( function() {
-				obj.style.left = parseFloat(obj.style.left) - 0.2 + '%';
-				obj.style.transform = `rotate(${-16.2 * i}deg)`;
-				i = i + 1;
-				if(parseInt(obj.style.left) == 48) {
-					clearInterval(timer);
-					let a = 1;
-					obj.style.width = '120px';
-					let timer2 = setInterval( function() {
-						obj.style.width = parseInt(obj.style.width) + 1 + 'px';
-						a += 1;
-						if(a == 50) {
-							clearInterval(timer2);
-							let b = 1;
-							obj.style.width = '170px';
-							let timer3 = setInterval( function() {
-								obj.style.width = parseInt(obj.style.width) - 1 + 'px';
-								b += 1;
-								if(b == 50) {
-									clearInterval(timer3);
-									let timer4 = setInterval( function() {
-										obj.style.left = parseFloat(obj.style.left) + 0.2 + '%';
-										if(parseInt(obj.style.left) == 80) clearInterval(timer4);
-									},16)
-								}
-							},50)
-						}
-					},50)
-				}
-			},18)
-		};
-	};
-	function white() {
-		let i = 1;
-		let obj = document.getElementsByClassName('btn_back')[0];
-		if(obj.style.left == '40%'){
-			let timer = setInterval( function() {
-				obj.style.left = parseFloat(obj.style.left) + 0.2 + '%';
-				obj.style.transform = `rotateY(${12 * i}deg)`;
-				i += 1;
-				if(parseInt(obj.style.left) == 70) {
-					clearInterval(timer);
-					let a = 1;
-					obj.style.width = '120px';
-					let timer2 = setInterval( function() {
-						obj.style.width = parseInt(obj.style.width) + 1 + 'px';
-						a += 1;
-						if(a == 50) {
-							clearInterval(timer2);
-							let b = 1;
-							obj.style.width = '170px';
-							let timer3 = setInterval( function() {
-								obj.style.width = parseInt(obj.style.width) - 1 + 'px';
-								b += 1;
-								if(b == 51) {
-									clearInterval(timer3);
-									let timer4 = setInterval( function() {
-										obj.style.left = parseFloat(obj.style.left) - 0.2 + '%';
-										if(parseFloat(obj.style.left) == 40) clearInterval(timer4);
-									},16)
-								}
-							},50)
-						}
-					},50)
-				}
-			},18)
-		};
-	};
-	window.onload = function () {
-		function check() {
-			// console.log(document.documentElement.clientWidth);
-			document.getElementsByClassName('btn_go')[0].style.left = '80%';
-			let obj = document.getElementsByClassName('hide')[0];
-			document.getElementsByClassName('btn_back')[0].style.left = '40%';
-			// obj.style.display = "none";
-			// if(document.documentElement.clientWidth < 400){
-			// 	obj.style.display = "block";
-			// }
-		};
-		check();
-	}
-</script>
-<style type="text/css">
-	.doorCon{
-		/*display: none;*/
-	}
-	/*.hide{
-		width: 100%;
-		height: 100%;
-		position: fixed;
-		background: #fff;
-		color: #000;
-		z-index: 100;
-		display: none;
-	}*/
-	body{
-		width: 100%;
-		height: 100%;
-		margin: 0;
-		padding: 0;
-		overflow-x: hidden;
-		background: url(bg.png) no-repeat;
-		background-size: 66% 100%;
-		background-position: right;
-	}
-	*{
-		margin: 0;
-		padding: 0;
-		font-size: 0;
-	}
-	.container{
-		width: 34%;
-		height: 100%;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		box-sizing: border-box;
-		justify-content: flex-start;
-		font-size: 0;
-	}
-	.container h1{
-		font-size: 32px;
-		color: skyblue;
-		margin-top: 36px;
-	}
-	.container p:before{
-		content: "当前室温：";
-		font-size: 20px;
-		color: #000;
-	}
-	.container p:after{
-		content: "℃";
-		font-size: 20px;
-		color: #000;	
-		margin-left: 10px;
-	}
-	.container p{
-		font-size: 40px;
-		margin-top: 20px;
-		color: red;
-	}
-	img{
-		width: 100%;
-	}
-	.img_con{
-		position: relative;
-		margin-top: 36px;
-		width: 91px;
-		/*background: #fff;*/
-	}
-	.img_con span{
-		position: absolute;
-		background: linear-gradient(to top, skyblue, red);
-	    left: 0;
-	    bottom: 0;
-	    width: 90%;
-	    z-index: -1;
-	    margin-left: 5%;
-	    margin-bottom: 5px;
-	}
-	.right,.left{
-		width: 50%;
-		height: 100%;
-		position: absolute;
-		top: 0;
-		z-index: 5;
-		background: #f3f3f3;
-	}
-	.left{
-		left: 0;
-		transform: rotateY(180deg);
-	}
-	.right{
-		right: 0;
-	}
-	.btn_start{
-		width: 120px;
-		line-height: 36px;
-		font-size: 20px;
-		position: absolute;
-		left: 0;
-		/*margin-left: -60px;*/
-		top: 0;
-		background: none;
-		/*transform: rotateX(-60deg);*/
-		outline: none;
-		border: none;
-		z-index: 6;
-		cursor: pointer;
-	}
-	.btn_start img{
-		width: 100%;
-	}
-	.lock{
-		width: 120px;
-		position: absolute;
-		z-index: 6;
-		left: 50%;
-		margin-left: -60px;
-		top: 50%;
-		margin-top: -50px;
-	}
-	.showModel{
-		width: 100%;
-		display: none;
-		height: 100%;
-		background: rgba(0,0,0,.3);
-		/*display: flex;*/
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		position: absolute;
-		left: 0;
-		top: 0;
-		z-index: 10;
-	}
-	.showModel div{
-		width: 400px;
-		height: 300px;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: space-around;
-		background: #fff;
-		border-radius: 30px;
-	}
-	.showModel div p{
-		font-size: 24px;
-		color: #000;
-	}
-	.showModel div button{
-		font-size: 20px;
-		padding: 2px 100px;
-		background: skyblue;
-		border-radius: 10px;
-		color: #fff;
-		box-shadow: 0 5px 8px 0 #d8cbcb;
-	}
-	.role{
-		position: absolute;
-		z-index: 6;
-		left: 50%;
-		width: 120px;
-		display: none;
-	}
-	.boy{
-		top: 16%;
-	}
-	.girl{
-		margin-left: -120px;
-		top: 56%;
-	}
-	.btn_go,.btn_back{
-		width: 120px;
-		opacity: 0;
-		position: absolute;
-		top:40%;
-		z-index: 2; 
-	}
-	.btn_go{
-		left: 80%;
-	}
-	.btn_back{
-		left: 40%;
-	}
-</style>
+<link rel="stylesheet" type="text/css" href="index.css">
 <body>
-	<!-- <div class="hide">屏幕尺寸不对</div> -->
-	<div class="doorCon">
+	<h1>温度监测室</h1>
+	<div id="app">
+		<div class="container">
+			<p>0</p>
+			<div class="img_con">
+				<img src="tem.png">
+				<span></span>
+			</div>
+		</div>
+		<div class="time_container">
+			<!-- <div class="tem_con">
+				<span></span>
+				<img src="https://lxwcfz.github.io/lxw/lrq/tem.png">
+			</div> -->
+			<div class="switch">
+				<p>监测间隔(ms)</p>
+				<span>2000</span>
+				<input onchange="changeValue()" type="number" value="2000" min="2000" max="100000" step="2000">
+				<button class="btn_getTem" onclick="voidJob(event)">实时监测</button>
+			</div>
+			<!-- <div class="hum_con">
+				<span></span>
+				<img src="https://lxwcfz.github.io/lxw/lrq/humi.png">
+			</div> -->
+			<div class="data"></div>
+			<div class="sheet">
+				<p class="y" style="left: 24px;top: -20px">温度</p>
+				<p style="top: 240px;left: -5px;" class="y">0</p>
+				<p style="top: 205px" class="y">10</p>
+				<p style="top: 170px" class="y">20</p>
+				<p style="top: 135px" class="y">30</p>
+				<p style="top: 100px" class="y">40</p>
+				<p style="top: 65px" class="y">50</p>
+				<p style="top: 30px" class="y">60</p>
+				<p style="top: 0px;" class="y">70</p>
+				<div class="x_axis"></div>
+				<span class="x" style="right: -20px;bottom: 33px;text-align: right;">时间</span>
+				<div class="barCon"></div>
+			</div>
+		</div>
+	</div>
+	<div style="display: none;" class="doorCon">
 		<img class="left" src="door.png">
 		<img class="right" src="door.png">
 		<img class="lock" src="lock.png">
@@ -428,22 +56,8 @@
 			<img src="key.png">
 		</button>
 	</div>
-	<div class="showModel">
-		<div>
-			<p>欢迎来到温度实验室！</p>
-			<button onclick="second()">进入</button>
-		</div>
-	</div>
-	<div class="container">
-		<h1>温度实验室</h1>
-		<span class="temNum" style="display: none;">28.7</span>
-		<p>0</p>
-		<div class="img_con">
-			<img src="tem.png">
-			<span></span>
-		</div>
-	</div>
-	<img class="btn_go" onclick="black(),third()" src="boy.png">
-	<img class="btn_back" onclick="white(),third()" src="girl.png">
+	<!-- <img class="btn_go" onclick="black(),third()" src="boy.png">
+	<img class="btn_back" onclick="white(),third()" src="girl.png"> -->
 </body>
+<script type="text/javascript" src="index.js"></script>
 </html>
