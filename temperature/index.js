@@ -55,7 +55,7 @@ function updateData() {
 		ps[1].innerHTML = `温度：${tem}`;
 		ps[2].innerHTML = `湿度：${hum}`;
 		showTime();
-		updateData();
+		upgradeCv();
 		if(hum == 'null') ps[2].remove();
 		let i = 1;
 		let timer = setInterval( function() {
