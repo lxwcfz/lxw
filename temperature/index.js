@@ -1,4 +1,4 @@
-var tem = 25.6;
+var tem = 35;
 var hum = 'null';
 var flag = 1;
 var coor = 0;
@@ -6,22 +6,7 @@ var para = 1;
 var ing = 0;
 var dict = [];
 function voidJob(e) {
-	// fetch('/data',{
-	// 	headers: {
-	// 		'Content-Type': "application/json"
-	// 	},
-	// 	method: "GET"
-	// }).then( (res) => {
-	// 	if(res.ok) {
-	// 		res.json().then( (data) => {
-	// 			tem = data.data.tem;
-	// 		})
-	// 	}
-	// }).catch( (e) => {
-	// 	console.log(e);
-	// });
 	go(e);
-	third();
 }
 function go(e) {
 	e.target.innerHTML = e.target.innerHTML == "实时监测" ? '监测中...' : '实时监测';
@@ -29,8 +14,25 @@ function go(e) {
 	if(ing == 1) updateData();
 };
 function updateData() {
+
 	let step = document.getElementsByClassName('switch')[0].getElementsByTagName('span')[0].innerHTML;
 	let alltimer = setInterval( function() {
+			// fetch('/data',{
+		// 	headers: {
+		// 		'Content-Type': "application/json"
+		// 	},
+		// 	method: "GET"
+		// }).then( (res) => {
+		// 	if(res.ok) {
+		// 		res.json().then( (data) => {
+		// 			tem = data.data.tem;
+		// 		})
+		// 	}
+		// }).catch( (e) => {
+		// 	console.log(e);
+		// });
+		tem = Math.floor(Math.random() * 100) >= 50 ? 50 : Math.floor(Math.random() * 100);
+		third();
 		if(document.getElementsByClassName('switch')[0].getElementsByTagName('span')[0].innerHTML !== step) {
 			clearInterval(alltimer);
 			updateData();
@@ -76,10 +78,8 @@ function upgradeCv(hour,min,sec) {
 		y: tem
 	};
 	dict.push(newData);
+	if(dict > 5) dict.splice(0,1);
 	console.log(dict);
-	if(dict.length == 6) {
-		dict.splice(0);
-	};
 	//数据源提取
 	var len = dict.length;
 	var xArr = [], yArr = [], tmp_yArr = [];
@@ -103,6 +103,7 @@ function upgradeCv(hour,min,sec) {
 	//canvas 准备
 	var canvas = document.getElementById("cv");//获取canvas画布
 	var ctx = canvas.getContext("2d");
+	ctx.clearRect(0,0,300,150);
 	//画折线
 	for(var i=0 ;i<len; i++){
 		var x = xArr[i];
@@ -119,7 +120,7 @@ function upgradeCv(hour,min,sec) {
 		var x = xArr[i];
 		var y = maxY - yArr[i] + minY;
 		var xMemo = dict[i].x;
-		var yMemo = "¥" + dict[i].y;
+		var yMemo = `${dict[i].y}℃`;
 		ctx.beginPath();
 		ctx.fillStyle = "#000";
 		ctx.arc(x, y, 2, 0, 2*Math.PI);//画点
@@ -305,8 +306,9 @@ function third() {
 					}
 				},100);
 			}
-		},100);
-	}else if(para = 0){
+		},10);
+	}else if(para == 0){
+		// console.log(tem);
 		document.getElementsByClassName('container')[0].getElementsByTagName('p')[0].innerHTML = tem;
 		scroll.style.height = 140 + (tem/10) * 40 + 'px';
 	};
