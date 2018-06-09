@@ -3,7 +3,7 @@
 <head>
 <meta charset='UTF-8'>
 </head>
-<link rel="stylesheet" type="text/css" href="index.css">
+<link rel="stylesheet" type="text/css" href="https://lxwcfz.github.io/lxw/temperature/index.css">
 <body>
 	<h1>温度监测室</h1>
 	<div id="app">
@@ -30,7 +30,7 @@
 				<img src="https://lxwcfz.github.io/lxw/lrq/humi.png">
 			</div> -->
 			<div class="data"></div>
-			<div class="sheet">
+			<div class="sheet" style="display: none;">
 				<p class="y" style="left: 24px;top: -20px">温度</p>
 				<p style="top: 240px;left: -5px;" class="y">0</p>
 				<p style="top: 205px" class="y">10</p>
@@ -44,6 +44,7 @@
 				<span class="x" style="right: -20px;bottom: 33px;text-align: right;">时间</span>
 				<div class="barCon"></div>
 			</div>
+			<canvas id="cv">你的设备不支持图表</canvas>
 		</div>
 	</div>
 	<div style="display: none;" class="doorCon">
@@ -59,5 +60,5 @@
 	<!-- <img class="btn_go" onclick="black(),third()" src="boy.png">
 	<img class="btn_back" onclick="white(),third()" src="girl.png"> -->
 </body>
-<script type="text/javascript" src="index.js"></script>
+<script type="text/javascript" src="https://lxwcfz.github.io/lxw/temperature/index.js"></script>
 </html>

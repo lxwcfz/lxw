@@ -4,6 +4,7 @@ var flag = 1;
 var coor = 0;
 var para = 1; 
 var ing = 0;
+var dict = [];
 function voidJob(e) {
 	// fetch('/data',{
 	// 	headers: {
@@ -54,6 +55,7 @@ function updateData() {
 		ps[1].innerHTML = `温度：${tem}`;
 		ps[2].innerHTML = `湿度：${hum}`;
 		showTime();
+		updateData();
 		if(hum == 'null') ps[2].remove();
 		let i = 1;
 		let timer = setInterval( function() {
@@ -67,6 +69,64 @@ function updateData() {
 		},100);
 		if(ing == 0) clearInterval(alltimer);
 	},step);
+};
+function upgradeCv() {
+	let newData = {
+		x: hour + ':' + min + ':' + sec,
+		y: tem
+	};
+	dict.push(newData);
+	console.log(dict);
+	if(dict.length == 6) {
+		dict.splice(0);
+	};
+	//数据源提取
+	var len = dict.length;
+	var xArr = [], yArr = [], tmp_yArr = [];
+	for(var i=0; i<len; i++){
+		xArr.push(i * 60);
+		tmp_yArr.push(dict[i].y);
+	}
+	var tmp_minY = Math.min.apply(Math, tmp_yArr);//最小值
+	var tmp_maxY = Math.max.apply(Math, tmp_yArr);//最大值
+	if(tmp_maxY - tmp_minY <= 100){
+		for(var i=0; i<len; i++){
+			yArr.push(tmp_yArr[i] - tmp_minY + 50);//与最小的做比较
+		}
+	}else{//如果相差太大会导致图表不美观
+		for(var i=0; i<len; i++){
+			yArr.push(tmp_yArr[i] / 500);
+		}
+	};
+	var minY = Math.min.apply(Math, yArr);
+	var maxY = Math.max.apply(Math, yArr);
+	//canvas 准备
+	var canvas = document.getElementById("cv");//获取canvas画布
+	var ctx = canvas.getContext("2d");
+	//画折线
+	for(var i=0 ;i<len; i++){
+		var x = xArr[i];
+		var y = maxY - yArr[i] + minY;
+		if(i === 0){
+			ctx .moveTo(x, y);
+		}else{
+	  		ctx .lineTo(x, y);
+		}
+	};
+	ctx .stroke();
+	//画点
+	for(var i=0; i<len; i++){
+		var x = xArr[i];
+		var y = maxY - yArr[i] + minY;
+		var xMemo = dict[i].x;
+		var yMemo = "¥" + dict[i].y;
+		ctx.beginPath();
+		ctx.fillStyle = "#000";
+		ctx.arc(x, y, 2, 0, 2*Math.PI);//画点
+		ctx.fill();
+		ctx.fillText(yMemo, x + 3, y - 10);
+		ctx.fillText(xMemo, x + 3, canvas.height - 10, 40);//画文字
+	}
 };
 function changeValue() {
 	if(document.getElementsByClassName('switch')[0].getElementsByTagName('input')[0].value < 2000) document.getElementsByClassName('switch')[0].getElementsByTagName('input')[0].value = 2000;
