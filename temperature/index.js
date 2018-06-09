@@ -55,7 +55,7 @@ function updateData() {
 		ps[1].innerHTML = `温度：${tem}`;
 		ps[2].innerHTML = `湿度：${hum}`;
 		showTime();
-		upgradeCv();
+		upgradeCv(hour,min,sec);
 		if(hum == 'null') ps[2].remove();
 		let i = 1;
 		let timer = setInterval( function() {
@@ -70,7 +70,7 @@ function updateData() {
 		if(ing == 0) clearInterval(alltimer);
 	},step);
 };
-function upgradeCv() {
+function upgradeCv(hour,min,sec) {
 	let newData = {
 		x: hour + ':' + min + ':' + sec,
 		y: tem
