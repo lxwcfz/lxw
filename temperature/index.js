@@ -17,7 +17,7 @@ function updateData() {
 
 	let step = document.getElementsByClassName('switch')[0].getElementsByTagName('span')[0].innerHTML;
 	let alltimer = setInterval( function() {
-			// fetch('/data',{
+		// fetch('/data',{
 		// 	headers: {
 		// 		'Content-Type': "application/json"
 		// 	},
@@ -31,7 +31,7 @@ function updateData() {
 		// }).catch( (e) => {
 		// 	console.log(e);
 		// });
-		tem = Math.floor(Math.random() * 100) >= 50 ? 50 : Math.floor(Math.random() * 100);
+		tem = Math.floor(Math.random() * 10) >= 4 ? 40 : Math.floor(Math.random() * 100);
 		third();
 		if(document.getElementsByClassName('switch')[0].getElementsByTagName('span')[0].innerHTML !== step) {
 			clearInterval(alltimer);
@@ -78,7 +78,7 @@ function upgradeCv(hour,min,sec) {
 		y: tem
 	};
 	dict.push(newData);
-	if(dict > 5) dict.splice(0,1);
+	if(dict.length > 5) dict.splice(0,1);
 	console.log(dict);
 	//数据源提取
 	var len = dict.length;
@@ -106,7 +106,7 @@ function upgradeCv(hour,min,sec) {
 	ctx.clearRect(0,0,300,150);
 	//画折线
 	for(var i=0 ;i<len; i++){
-		var x = xArr[i];
+		var x = xArr[i] + 20;
 		var y = maxY - yArr[i] + minY;
 		if(i === 0){
 			ctx .moveTo(x, y);
@@ -117,7 +117,7 @@ function upgradeCv(hour,min,sec) {
 	ctx .stroke();
 	//画点
 	for(var i=0; i<len; i++){
-		var x = xArr[i];
+		var x = xArr[i] + 20;
 		var y = maxY - yArr[i] + minY;
 		var xMemo = dict[i].x;
 		var yMemo = `${dict[i].y}℃`;
@@ -126,7 +126,7 @@ function upgradeCv(hour,min,sec) {
 		ctx.arc(x, y, 2, 0, 2*Math.PI);//画点
 		ctx.fill();
 		ctx.fillText(yMemo, x + 3, y - 10);
-		ctx.fillText(xMemo, x + 3, canvas.height - 10, 40);//画文字
+		ctx.fillText(xMemo, x - 15, canvas.height - 10, 40);//画文字
 	}
 };
 function changeValue() {
