@@ -17,21 +17,21 @@ function updateData() {
 
 	let step = document.getElementsByClassName('switch')[0].getElementsByTagName('span')[0].innerHTML;
 	let alltimer = setInterval( function() {
-		// fetch('/data',{
-		// 	headers: {
-		// 		'Content-Type': "application/json"
-		// 	},
-		// 	method: "GET"
-		// }).then( (res) => {
-		// 	if(res.ok) {
-		// 		res.json().then( (data) => {
-		// 			tem = data.data.tem;
-		// 		})
-		// 	}
-		// }).catch( (e) => {
-		// 	console.log(e);
-		// });
-		tem = Math.floor(Math.random() * 10) >= 4 ? 40 : Math.floor(Math.random() * 100);
+		fetch('/data',{
+			headers: {
+				'Content-Type': "application/json"
+			},
+			method: "GET"
+		}).then( (res) => {
+			if(res.ok) {
+				res.json().then( (data) => {
+					tem = data.data.tem;
+				})
+			}
+		}).catch( (e) => {
+			console.log(e);
+		});
+		// tem = Math.floor(Math.random() * 10) >= 4 ? 40 : Math.floor(Math.random() * 100);
 		third();
 		if(document.getElementsByClassName('switch')[0].getElementsByTagName('span')[0].innerHTML !== step) {
 			clearInterval(alltimer);
