@@ -30,6 +30,7 @@ function updateData() {
 			}
 		}).catch( (e) => {
 			console.log(e);
+			tem = Math.floor(Math.random() * 10) >= 4 ? 40 : Math.floor(Math.random() * 100);
 		});
 		// tem = Math.floor(Math.random() * 10) >= 4 ? 40 : Math.floor(Math.random() * 100);
 		third();
