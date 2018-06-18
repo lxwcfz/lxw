@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<title>Document</title>
+	<!-- CSS样式代码 -->
+    <style type="text/css">
+    body{
+        overflow-x: hidden;
+    }
+    button{
+        border: none;
+        outline: none;
+    }
+    *{
+        font-size: 0;
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+    }
+    /*left*/
+    .navigate_container{
+        height: 150px;
+        line-height: 100px;
+        width: 100%;
+        min-width: 1300px;
+        font-size: 0;
+    }
+    .nav_left{
+        display: inline-block;
+        width:200px;
+        height: 100px;
+        vertical-align: middle;
+    }
+    .nav_left a{
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+    }
+    .img_left{
+        vertical-align: middle;
+        width: 100%;
+    }
+    /*center*/
+    .nav_center{
+        display:inline-block;
+        vertical-align: middle;
+        height:36px;
+        width: 300px;
+        line-height: 36px;
+        border: 1px solid #000;
+        margin-left: 100px;
+    }
+    .nav_center input{
+        width: 260px;
+        height: 28px;
+        line-height: 28px;
+        vertical-align: middle;
+        display: inline-block;
+        border: none;
+        outline: none;
+        font-size: 12px;
+        margin-left: 10px;
+    }
+    .nav_center img{
+        height: 28px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    /*right*/
+    .nav_right{
+        display:inline-block;
+        height:100px;
+        line-height: 100px;
+        float: right;
+        padding-right: 100px;
+    }
+    .nav_right ul{
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 100px;
+        height: 100px;
+    }
+    .nav_right ul li{
+        display: inline-block;
+        text-decoration:none;
+        list-style:none;
+        width:70px;
+        height:28px;
+        line-height: 28px;
+        vertical-align: middle;
+    }
+    .nav_right ul li p{
+        font-size: 22px;
+        width: 100%;
+        height: 28px;
+        vertical-align: middle;
+        display: inline-block;
+        text-align: center;/*水平居中*/
+        line-height: 28px;
+    }
+
+    /*login*/
+    .div_login{
+        width: 100%;
+        height: 215px;
+        background:url("../img/login.png");
+        background-size:100%;
+        text-align: center;
+    }
+    .div_login .download{
+        width: 150px;
+        height: 150px;
+        display: inline-block;
+        vertical-align: top;            /*其父元素未设置行高的时候应该设置此属性让其在父元素最顶部*/
+        margin-top: 30px;
+    }
+    .download p{
+        font-size: 25px;
+        color: #111;
+    }
+    .download div{
+        height: 30px;
+        margin-top: 50px;
+        line-height: 30px;
+    }
+    .download div button{
+        background: #00B51D;
+        vertical-align: middle;
+        color: #fff;
+        font-size: 12px;
+        padding: 7px 21px;
+        border: none;
+        outline: none;          /*点击以后的蓝色框框不见*/
+        cursor: pointer;        /*放上去是小手掌*/
+    }
+    .download div img{
+        width: 30px;
+        vertical-align: middle;
+        height: 30px;
+        padding-left: 5px;
+    }
+    .login{
+        width: 330px;
+        height: 200px;
+        display: inline-block;
+        margin-left: 20px;
+        padding-top: 15px;
+    }
+    .login .input_address{
+        width: 328px;
+        border: 1px solid #000;
+        padding-left: 5px;
+        box-sizing: border-box;        /* 使用padding的时候width不变化*/
+        font-size: 12px;
+        height: 38px;
+    }
+    .login .password{
+        margin-top: 12px;
+        line-height: 36px;
+        width: 328px;
+        height: 38px;
+        border: 1px solid #000;
+        box-sizing: border-box;
+        background: #fff;
+    }
+    .password input{
+        width: 298px;                   /*同下box-sizing*/        
+        font-size: 12px;
+        outline: none;
+        height: 36px;                   /*因为父元素设置了box-sizing,表明表框也算在了自身高度宽度上*/
+        vertical-align: middle;
+        border: none;
+        padding-left: 5px;
+        box-sizing: border-box;
+        background: transparent;        /*透明背景*/
+    }
+    .password span{
+        width: 28px;
+        height: 36px;
+        font-size: 12px;
+        vertical-align: middle;
+        color: gray;
+        line-height: 36px;
+        background: transparent;
+    }
+    .login section{
+        width: 100%;
+        height: 30px;
+        line-height: 30px;
+        margin-top: 12px;
+    }
+    .login section button{
+        width: 45%;
+        font-size: 14px;
+        height: 30px;
+        background: #30A080;
+        color: #fff;
+    }
+    .login section button:last-child{
+        background: #fff;
+        border: 1px solid #30A080;
+        margin-left: 10%;
+        color: #30A080;
+    }
+    .login .login_bottom{
+        width: 100%;
+        height: 24px;
+        line-height: 24px;
+        margin-top: 12px;
+    }
+    .login_bottom label,.login_bottom input,.login_bottom img{
+        vertical-align: middle;
+    }
+    .login_bottom label{
+        font-size: 12px;
+    }
+    .login_bottom img{
+        height: 12px;
+        width: 13px;
+    }
+    .bottom_left,.bottom_right{
+        width: 50%;
+        text-align: left;
+    }
+    .bottom_right{
+        text-align: right;
+    }
+    .bottom_right img:last-child{
+        margin-left:5px;
+    }
+    </style>
+
+</head>
+<body>
+    <div class="navigate_container">
+        <div class="nav_left">
+            <a href="https://www.douban.com/">
+                <img class="img_left"  border="0" src="../img/douban.png" alt="豆瓣">
+            </a>
+        </div>
+
+        <div class="nav_center">
+            <input type="text" class="form-control" placeholder="书籍、电影、音乐、小组、小站、成员"> 
+            <img  border="0" src="../img/search.png" alt="搜索">
+        </div>
+
+        <div class="nav_right">
+            <ul class="list_right">
+                <li class="first">
+                    <p class="read" href="https://www.douban.com/">读书</p>
+                </li>
+                <li class="second">
+                    <p class="movie">电影</p>
+                </li>
+                <li class="third">
+                    <p class="music">音乐</p>
+                </li>
+                <li class="forth">
+                    <p class="group">小组</p>
+                </li>
+                <li class="fifth">
+                    <p class="city">同城</p>
+                </li>
+                <li class="sixth">
+                    <p class="FM">FM</p>
+                </li>
+                <li class="seventh">
+                    <p class="time">时间</p>
+                </li>
+                <li class="eighth">
+                    <p class="fair">市集</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="div_login">
+        <div class="download">  
+            <p>豆瓣5.0</p>
+            <div>
+                <button>下载豆瓣 App</button>
+                <img src="../img/small.png">
+            </div>
+        </div>
+        <div class="login">
+            <input class="input_address" type="text" placeholder="邮箱/手机号">
+            <div class="password">
+                <input type="password" placeholder="密码">
+                <span>帮助</span>
+            </div>
+            <section>
+                <button>登录豆瓣</button>
+                <button>注册账号</button>
+            </section>
+            <div class="login_bottom">
+                <div class='bottom_left'>
+                    <input id="remember" type="checkbox">
+                    <label for="remember">记住我</label>
+                </div>
+                <div class="bottom_right">
+                    <img src="../img/WeChat.png">
+                    <img src="../img/weibo.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<!--想让一个元素内部的元素垂直居中就设该元素line-height=height
+水平居中就text-align:center
