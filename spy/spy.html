@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/spy.css">
+</head>
+<body>
+	<nav>
+		<p class="logo_text">Monitoring Platform</p>
+		<ul>
+			<li><a href="javascript:void(0)">帮助</a></li>
+			<li><a href="javascript:void(0)" onclick="goSignIn()">登录</a></li>
+		</ul>
+	</nav>
+	<div class="content">
+		<p>jetson TX2</p>
+		<span>基于Nvidia GPU的智能摄像头监控平台</span>
+		<button type="button" onclick="goSignUp()">现在注册</button>
+	</div>
+	<div id="app">
+		<form v-for="item in signList" :class="item.class" :key="item.id" :action="item.action" 
+		:method="item.method">
+			<p class="form_title">{{ item.button }}</p>
+			<div class="normal_input" v-for="wave in item.inputs">
+				<label :for="wave.id">{{ wave.text }}</label>
+				<input class="normalInput" :type="wave.type" :name="wave.id" :id="wave.id">
+			</div>
+			<div v-if="item.id == 'signIn' ? true : false" class="rememberMe">
+				<input type="checkbox" :checked="item.remem" id="remem">
+				<label for="remem">记住我</label>
+			</div>
+			<button class="btn_submit" type="button" onclick="checkInput()">{{ item.button }}</button>
+			<p class="go_signUp" v-if="item.id == 'signIn' ? true : false">
+				还没账号？<button type="button" onclick="goSignUp()">现在注册！</button>
+			</p>
+		</form>
+	</div>
+</body>
+	<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+	<script type="text/javascript" src="js/spy.js"></script>
+	<script type="text/javascript" src="js/vue.min.js"></script>
+</html>
