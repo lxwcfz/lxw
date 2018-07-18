@@ -1,60 +1,60 @@
 $(function(){
-	var vm = new Vue({
-		el: "#app",
-		data: {
-			signList: {
-				signUpList: {
-					class: "form_signUp",
-					id: "signUp",
-					action: "",
-					method: "",
-					button: "注册",
-					inputs: [
-						{
-							id: "userName",
-							type: "text",
-							text: "名称:"
-						},
-						{
-							id: "userEmail",
-							type: "email",
-							text: "邮箱:"
-						},
-						{
-							id: "userPassword",
-							type: "password",
-							text: "密码:"
-						},
-						{
-							id: "userPassword",
-							type: "password",
-							text: "确认密码:"
-						}
-					]
-				},
-				signInList: {
-					class: "form_signIn",
-					id: "signIn",
-					action: "",
-					method: "",
-					button: "登录",
-					remem: true,
-					inputs: [
-						{
-							id: "loginInEmail",
-							type: "email",
-							text: "邮箱:"
-						},
-						{
-							id: "loginInPassword",
-							type: "password",
-							text: "密码:"
-						}
-					]
-				}
-			}
-		}
-	});
+	// var vm = new Vue({
+	// 	el: "#app",
+	// 	data: {
+	// 		signList: {
+	// 			signUpList: {
+	// 				class: "form_signUp",
+	// 				id: "signUp",
+	// 				action: "",
+	// 				method: "",
+	// 				button: "注册",
+	// 				inputs: [
+	// 					{
+	// 						id: "userName",
+	// 						type: "text",
+	// 						text: "名称:"
+	// 					},
+	// 					{
+	// 						id: "userEmail",
+	// 						type: "email",
+	// 						text: "邮箱:"
+	// 					},
+	// 					{
+	// 						id: "userPassword",
+	// 						type: "password",
+	// 						text: "密码:"
+	// 					},
+	// 					{
+	// 						id: "userPassword",
+	// 						type: "password",
+	// 						text: "确认密码:"
+	// 					}
+	// 				]
+	// 			},
+	// 			signInList: {
+	// 				class: "form_signIn",
+	// 				id: "signIn",
+	// 				action: "",
+	// 				method: "",
+	// 				button: "登录",
+	// 				remem: true,
+	// 				inputs: [
+	// 					{
+	// 						id: "loginInEmail",
+	// 						type: "email",
+	// 						text: "邮箱:"
+	// 					},
+	// 					{
+	// 						id: "loginInPassword",
+	// 						type: "password",
+	// 						text: "密码:"
+	// 					}
+	// 				]
+	// 			}
+	// 		}
+	// 	}
+	// });
 	
 });
 function checkInput() {

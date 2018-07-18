@@ -188,3 +188,66 @@ a:hover{
 	border-radius: 5px;
 	height: 32px;
 }
+
+
+#app2{
+	width: 100%;
+	min-width: 1200px;
+	overflow: auto;
+}
+
+.app2_left{
+	margin: 30px 30px 0 30px;
+	width: 620px;
+	display: inline-block;
+}
+
+.app2_right{
+	width: 460px;
+    float: right;
+    margin-right: 50px;
+    background: #cdd7d8;
+    min-height: 420px;
+    margin-top: 30px;
+    box-shadow: 0 5px 5px 5px #dad8d8;
+}
+
+#app2 video{
+	width: 620px;
+	height: 400px;
+}
+
+#app2 .btn_list{
+	width: 620px;
+	padding: 10px 0;
+}
+
+#app2 .btn_list button{
+	font-size: 14px;
+	padding: 3px 5px;
+	box-sizing: border-box;
+	background: skyblue;
+	color: #fff;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-top: 5px;
+}
+
+.app2_right .history_title{
+	height: 36px;
+	line-height: 36px;
+	width: 100%;
+	text-align: center;
+	border-bottom: 1px solid #fff;
+	font-size: 24px;
+	color: #000;
+}
+
+.app2_right div{
+	width: 100%;
+	padding: 10px 10px;
+}
+
+.app2_right p,.app2_right span{
+	color: #000;
+}
